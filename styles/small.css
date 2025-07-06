@@ -1,14 +1,14 @@
 :root {
-    --primary-color: #007bff; /* Bright Blue */
-    --secondary-color: #343a40; /* Dark Gray/Black */
-    --accent-color: #28a745; /* Green (e.g., for completed items or success) */
+    --primary-color: #007bff;
+    --secondary-color: #343a40;
+    --accent-color: #28a745;
     --text-color: #333;
-    --background-color: #f8f9fa; /* Light Gray */
+    --background-color: #f8f9fa;
     --card-background: #ffffff;
-    --border-color: #dee2e6; /* Light Gray Border */
-    --completed-course-bg: #e0ffe0; /* Very light green for completed courses */
-    --completed-course-border: #218838; /* Darker green border */
-    --font-family: 'Roboto', sans-serif; /* IMPORTANT: Replace 'Roboto' with your chosen Google Font */
+    --border-color: #dee2e6;
+    --completed-course-bg: #e0ffe0;
+    --completed-course-border: #218838;
+    --font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -20,13 +20,10 @@ body {
     color: var(--text-color);
 }
 
-/* Ensure no horizontal scrolling between 320px and 1200px */
 html, body {
     overflow-x: hidden;
 }
 
-/* Prevent text from touching the edge of the screen */
-/* Apply general padding to main structural elements */
 header, main, footer {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -40,20 +37,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows header content to wrap on very small screens */
+    flex-wrap: wrap;
 }
 
-.header-content { /* New container for logo/name and hamburger */
+.header-content {
     display: flex;
     align-items: center;
-    width: 100%; /* Full width on small screens to push hamburger button */
+    width: 100%;
     justify-content: space-between;
-    margin-bottom: 1rem; /* Space between content and nav toggle */
+    margin-bottom: 1rem;
 }
 
-/* Profile Picture Styling */
 .profile-pic {
-    width: 60px; /* Smaller on mobile */
+    width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
@@ -64,36 +60,33 @@ header {
 }
 
 .site-name {
-    font-size: 1.4rem; /* Adjusted for smaller screens */
-    font-weight: 700; /* Bolder for prominence */
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-left: 5px;
-    flex-grow: 1; /* Allows name to take available space pushing hamburger */
+    flex-grow: 1;
 }
 
-.hamburger-menu { /* Updated class name for consistency */
+.hamburger-menu {
     background: none;
     border: none;
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
-    display: block; /* Show hamburger on small screens */
-    padding: 5px; /* Make clickable area larger */
+    display: block;
 }
 
 nav {
     width: 100%;
-    display: none; /* Hidden by default on small screens */
-    /* Transition for smooth opening/closing */
+    display: none;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
 }
 
-/* JavaScript will add this class to show/hide the navigation */
 nav.open {
-    display: block; /* Override display:none when open */
-    max-height: 200px; /* Adjust as needed for max height of menu */
+    display: block;
+    max-height: 200px;
     opacity: 1;
 }
 
@@ -102,7 +95,7 @@ nav ul {
     padding: 0;
     margin: 0;
     text-align: center;
-    background-color: var(--secondary-color); /* Match header background */
+    background-color: var(--secondary-color);
 }
 
 nav ul li a {
@@ -110,21 +103,21 @@ nav ul li a {
     padding: 0.8rem 1rem;
     color: #fff;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
     background-color: var(--primary-color);
-    color: #fff; /* Ensure text remains white on hover/active */
+    color: #fff;
 }
 
 main {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    max-width: 960px; /* Constrain main content width on larger screens */
-    margin: 0 auto; /* Center main content */
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 h1, h2 {
@@ -138,11 +131,10 @@ section {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* More subtle shadow */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Course Filters */
-.course-filter-buttons { /* Class from your HTML */
+.course-filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -166,11 +158,9 @@ section {
     transform: translateY(-2px);
 }
 
-/* Course Cards Container (Grid) */
-#course-cards-container { /* Updated ID to match JS */
+#course-cards-container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on small screens */
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
 }
 
 .course-card {
@@ -199,7 +189,6 @@ section {
     color: #555;
 }
 
-/* Styling for Completed Courses */
 .course-card.completed {
     background-color: var(--completed-course-bg);
     border: 1px solid var(--completed-course-border); /* Full border */
@@ -210,7 +199,7 @@ section {
     color: var(--completed-course-border);
 }
 
-.total-credits-display { /* New class from HTML */
+.total-credits-display {
     text-align: right;
     font-weight: bold;
     margin-top: 1.5rem;
@@ -218,7 +207,6 @@ section {
     font-size: 1.1rem;
 }
 
-/* Learning Activities list styling */
 #learning-activities ul {
     list-style: none;
     padding: 0;
@@ -251,22 +239,22 @@ footer {
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between icons */
+    gap: 20px;
 }
 
 .social-links a {
-    display: inline-block; /* Ensure padding/margin works */
+    display: inline-block;
 }
 
 .social-links img {
-    height: 35px; /* Slightly larger social icons */
+    height: 35px;
     width: 35px;
     transition: transform 0.3s ease;
-    filter: invert(1); /* Makes icons white if they are black originally */
+    filter: invert(1);
 }
 
 .social-links img:hover {
-    transform: scale(1.15); /* More pronounced hover effect */
+    transform: scale(1.15);
     filter: invert(1) drop-shadow(0 0 5px var(--primary-color)); /* Glow effect */
 }
 
@@ -276,8 +264,6 @@ footer p {
     line-height: 1.4;
 }
 
-/* Wayfinding (if current page link should be highlighted) */
 nav ul li a.active {
     font-weight: bold;
-    /* Styles are already set in the general nav a:hover rule */
 }
