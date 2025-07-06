@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aaron Coker's WDD231 Course Home Page. Learning web development through practical projects and demonstrating skills.">
+    <meta name="author" content="Aaron Coker">
+    <title>Aaron Coker | WDD231 Course Home Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css"> <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content"> <a href="index.html" class="logo-link">
+                <img src="images/Profile.webp" alt="Aaron Coker Profile Picture" class="profile-pic">
+            </a>
+            <span class="site-name">Aaron Coker</span> <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-controls="main-nav" aria-expanded="false">&#9776;</button>
+        </div>
+        <nav id="main-nav"> <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber/index.html">Chamber</a></li> <li><a href="final-project/index.html">Final</a></li> </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to My WDD231 Page!</h1> <section id="about-me"> <h2>About Me</h2>
+            <p>My name is Aaron Coker, and I was born and raised in the scenic landscapes of Victoria, British Columbia, Canada. I currently reside in Cranbrook, BC where I am employed by the government, dedicated to the critical area of road safety. In this role, I am committed to enhancing public safety through proactive measures suchs as road knowledge and examination.</p>
+            <p>My family is incredibly important to me, and I am happily married with three wonderful children who are a constant source of joy and inspiration in my life.</p>
+            </section>
+
+        <section id="certificate-courses">
+            <h2>Web and Computer Programming Courses</h2> <div class="course-filter-buttons">
+                <button id="filter-all">All Courses</button>
+                <button id="filter-wdd">WDD Courses</button>
+                <button id="filter-cse">CSE Courses</button>
+            </div>
+            <div id="course-cards-container" class="course-grid"> </div>
+            <p class="total-credits-display">Total Credits Displayed: <span id="total-credits">0</span></p> </section>
+
+        <section id="learning-activities">
+            <h2>Learning Activities & Projects</h2> <p>Here you'll find links to my completed learning activities and supplementary projects from WDD231.</p>
+            <ul>
+                <li><a href="#" target="_blank">Week 01: CSS Selectors Practice</a></li>
+                <li><a href="#" target="_blank">Week 02: Responsive Images</a></li>
+                </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/codecamp-champ" target="_blank" aria-label="Aaron Coker's GitHub Profile"><img src="images/394187_github_icon.svg" alt="GitHub Icon"></a>
+            <a href="https://www.linkedin.com/in/aaron-d-c/" target="_blank" aria-label="Aaron Coker's LinkedIn Profile"><img src="images/5296501_linkedin_network_linkedin logo_icon.svg" alt="LinkedIn Icon"></a>
+            <a href="https://www.facebook.com/aaron.coker.56" target="_blank" aria-label="Aaron Coker's Facebook Profile"><img src="images/4102573_applications_facebook_media_social_icon.svg" alt="Facebook Icon"></a>
+            </div>
+        <p>&copy; <span id="currentyear"></span> Aaron Coker | Cranbrook, British Columbia, Canada</p> <p>Last Modified: <span id="lastModified"></span></p> </footer>
+</body>
+</html>

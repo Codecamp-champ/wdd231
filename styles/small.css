@@ -1,0 +1,283 @@
+:root {
+    --primary-color: #007bff; /* Bright Blue */
+    --secondary-color: #343a40; /* Dark Gray/Black */
+    --accent-color: #28a745; /* Green (e.g., for completed items or success) */
+    --text-color: #333;
+    --background-color: #f8f9fa; /* Light Gray */
+    --card-background: #ffffff;
+    --border-color: #dee2e6; /* Light Gray Border */
+    --completed-course-bg: #e0ffe0; /* Very light green for completed courses */
+    --completed-course-border: #218838; /* Darker green border */
+    --font-family: 'Roboto', sans-serif; /* IMPORTANT: Replace 'Roboto' with your chosen Google Font */
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Ensure no horizontal scrolling between 320px and 1200px */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Prevent text from touching the edge of the screen */
+/* Apply general padding to main structural elements */
+header, main, footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows header content to wrap on very small screens */
+}
+
+.header-content { /* New container for logo/name and hamburger */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width on small screens to push hamburger button */
+    justify-content: space-between;
+    margin-bottom: 1rem; /* Space between content and nav toggle */
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 60px; /* Smaller on mobile */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border: 2px solid var(--primary-color);
+    display: block;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 1.4rem; /* Adjusted for smaller screens */
+    font-weight: 700; /* Bolder for prominence */
+    margin-left: 5px;
+    flex-grow: 1; /* Allows name to take available space pushing hamburger */
+}
+
+.hamburger-menu { /* Updated class name for consistency */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block; /* Show hamburger on small screens */
+    padding: 5px; /* Make clickable area larger */
+}
+
+nav {
+    width: 100%;
+    display: none; /* Hidden by default on small screens */
+    /* Transition for smooth opening/closing */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+/* JavaScript will add this class to show/hide the navigation */
+nav.open {
+    display: block; /* Override display:none when open */
+    max-height: 200px; /* Adjust as needed for max height of menu */
+    opacity: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: var(--secondary-color); /* Match header background */
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--primary-color);
+    color: #fff; /* Ensure text remains white on hover/active */
+}
+
+main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    max-width: 960px; /* Constrain main content width on larger screens */
+    margin: 0 auto; /* Center main content */
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* More subtle shadow */
+}
+
+/* Course Filters */
+.course-filter-buttons { /* Class from your HTML */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.course-filter-buttons button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.course-filter-buttons button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Course Cards Container (Grid) */
+#course-cards-container { /* Updated ID to match JS */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 1.5rem;
+}
+
+.course-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: var(--card-background);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.course-card p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Styling for Completed Courses */
+.course-card.completed {
+    background-color: var(--completed-course-bg);
+    border: 1px solid var(--completed-course-border); /* Full border */
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2); /* Green tint shadow */
+}
+
+.course-card.completed h3 {
+    color: var(--completed-course-border);
+}
+
+.total-credits-display { /* New class from HTML */
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Learning Activities list styling */
+#learning-activities ul {
+    list-style: none;
+    padding: 0;
+}
+
+#learning-activities ul li {
+    margin-bottom: 0.5rem;
+}
+
+#learning-activities ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#learning-activities ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-links a {
+    display: inline-block; /* Ensure padding/margin works */
+}
+
+.social-links img {
+    height: 35px; /* Slightly larger social icons */
+    width: 35px;
+    transition: transform 0.3s ease;
+    filter: invert(1); /* Makes icons white if they are black originally */
+}
+
+.social-links img:hover {
+    transform: scale(1.15); /* More pronounced hover effect */
+    filter: invert(1) drop-shadow(0 0 5px var(--primary-color)); /* Glow effect */
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Wayfinding (if current page link should be highlighted) */
+nav ul li a.active {
+    font-weight: bold;
+    /* Styles are already set in the general nav a:hover rule */
+}
