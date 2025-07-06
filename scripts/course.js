@@ -4,14 +4,14 @@ const courses = [
         "number": 110,
         "title": "Introduction to Web Programming",
         "credits": 3,
-        "completed": true // Example: Set to true if you completed it
+        "completed": true
     },
     {
         "subject": "WDD",
         "number": 130,
         "title": "Web Fundamentals",
         "credits": 2,
-        "completed": true // Example: Set to true if you completed it
+        "completed": true
     },
     {
         "subject": "CSE",
@@ -23,14 +23,14 @@ const courses = [
     {
         "subject": "WDD",
         "number": 231,
-        "title": "Web Backend Development", // Assumed distinct WDD 231 entries
+        "title": "Web Backend Development",
         "credits": 3,
         "completed": false
     },
     {
         "subject": "WDD",
         "number": 231,
-        "title": "Web Frontend Development", // Assumed distinct WDD 231 entries
+        "title": "Web Frontend Development",
         "credits": 3,
         "completed": false
     },
@@ -72,13 +72,12 @@ const courses = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const courseCardsContainer = document.getElementById('course-cards-container'); // Changed ID to match HTML
+    const courseCardsContainer = document.getElementById('course-cards-container');
     const filterAllBtn = document.getElementById('filter-all');
     const filterWddBtn = document.getElementById('filter-wdd');
     const filterCseBtn = document.getElementById('filter-cse');
-    const totalCreditsSpan = document.getElementById('total-credits'); // Changed ID to match HTML
+    const totalCreditsSpan = document.getElementById('total-credits');
 
-    // Function to create a course card DOM element
     function createCourseCard(course) {
         const card = document.createElement('div');
         card.classList.add('course-card');
@@ -94,9 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     }
 
-    // Function to display courses in the container
     function displayCourses(courseList) {
-        courseCardsContainer.innerHTML = ''; // Clear existing cards before adding new ones
+        courseCardsContainer.innerHTML = '';
         if (courseList.length === 0) {
             courseCardsContainer.innerHTML = '<p>No courses to display in this category.</p>';
         } else {
@@ -104,21 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 courseCardsContainer.appendChild(createCourseCard(course));
             });
         }
-        updateTotalCredits(courseList); // Update credits after displaying courses
+        updateTotalCredits(courseList);
     }
 
-    // Function to update total credits for the CURRENTLY DISPLAYED courses
     function updateTotalCredits(courseList) {
         const totalCredits = courseList.reduce((sum, course) => sum + course.credits, 0);
         totalCreditsSpan.textContent = totalCredits;
     }
 
-    // Initial display: Show all courses when the page loads
     displayCourses(courses);
 
-    // Event listeners for filter buttons
     filterAllBtn.addEventListener('click', () => {
-        displayCourses(courses); // Show all original courses
+        displayCourses(courses);
     });
 
     filterWddBtn.addEventListener('click', () => {

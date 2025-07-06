@@ -1,64 +1,57 @@
 @media (min-width: 768px) {
-    /* Hide hamburger menu and show full navigation */
     .hamburger-menu {
         display: none;
     }
 
     nav {
-        display: block !important; /* Ensure nav is always visible on large screens */
-        max-height: none; /* Remove max-height restriction */
-        opacity: 1; /* Ensure opacity is full */
-        width: auto; /* Allow nav to size based on content */
+        display: block !important;
+        max-height: none;
+        opacity: 1;
+        width: auto;
     }
 
-    /* Adjust header layout for larger screens */
     header {
-        flex-wrap: nowrap; /* Prevent wrapping in header */
-        justify-content: space-between; /* Space out logo/name and nav */
-        padding-left: 2rem; /* More horizontal padding */
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-left: 2rem;
         padding-right: 2rem;
     }
 
     .header-content {
-        width: auto; /* Allow header content to size naturally */
-        margin-bottom: 0; /* No margin below content */
+        width: auto;
+        margin-bottom: 0;
     }
 
     .site-name {
-        font-size: 1.8rem; /* Larger font for desktop */
-        margin-left: 15px; /* Adjust spacing */
-        margin-right: auto; /* Pushes nav to the right */
+        font-size: 1.8rem;
+        margin-left: 15px;
+        margin-right: auto;
     }
 
-    /* Horizontal navigation using flexbox */
     nav ul {
         display: flex;
-        background-color: transparent; /* Transparent background */
+        background-color: transparent;
     }
 
     nav ul li a {
-        border-bottom: none; /* No border on large screens */
-        padding: 0.8rem 1.5rem; /* Adjust padding for horizontal links */
+        border-bottom: none;
+        padding: 0.8rem 1.5rem;
     }
 
-    /* Profile Picture Size on larger screens */
     .profile-pic {
         width: 80px;
         height: 80px;
     }
 
-    /* Course cards container for multiple columns */
     #course-cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2-3 columns */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
-    /* Adjust main padding for larger views */
     main {
         padding-left: 2rem;
         padding-right: 2rem;
     }
 
-    /* Footer padding */
     footer {
         padding-left: 2rem;
         padding-right: 2rem;
@@ -67,18 +60,16 @@
 
 @media (min-width: 1024px) {
     main {
-        max-width: 1200px; /* Allow wider main content */
-        padding-left: 0; /* Remove side padding if max-width is hit */
+        max-width: 1200px;
+        padding-left: 0;
         padding-right: 0;
     }
 
-    /* Slightly larger social icons for very large screens */
     .social-links img {
         height: 40px;
         width: 40px;
     }
 
-    /* More columns for courses if space allows */
     #course-cards-container {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
