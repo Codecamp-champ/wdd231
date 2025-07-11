@@ -1,0 +1,27 @@
+@media (min-width: 960px) {
+    main {
+        padding: 2rem;
+    }
+
+    .directory-main h1 {
+        font-size: 3em;
+    }
+
+    .view-toggle button {
+        padding: 1rem 2rem;
+        font-size: 1.1em;
+    }
+
+    #member-display.grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .member-card {
+        padding: 30px;
+    }
+
+    .member-list-item {
+        padding: 20px 30px;
+    }
+}

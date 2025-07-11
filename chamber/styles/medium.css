@@ -1,0 +1,50 @@
+@media (min-width: 600px) {
+    /* Header & Nav */
+    #menu-button {
+        display: none; /* Hide hamburger menu on larger screens */
+    }
+
+    nav {
+        display: block; /* Always show nav on larger screens */
+        position: static;
+        background-color: transparent; /* No background for static nav */
+        box-shadow: none;
+        width: auto;
+    }
+
+    nav ul {
+        flex-direction: row; /* Horizontal navigation */
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        color: var(--primary-color); /* Nav links are primary color */
+        padding: 0.5rem 1rem;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: transparent;
+        color: var(--secondary-color); /* Hover/active color */
+        text-decoration: underline;
+    }
+
+    .header-content {
+        justify-content: space-between;
+    }
+
+    /* Footer */
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .dev-info {
+        border-top: none;
+        padding-top: 0;
+        text-align: right;
+        width: auto;
+    }
+}
