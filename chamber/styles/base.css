@@ -48,10 +48,14 @@ main {
     width: 100%;
 }
 
+/* START MODIFIED/ADDED STYLES FOR LOGOS */
 .chamber-logo {
-    height: 60px; /* Adjust as needed */
-    width: auto;
+    width: 60px; /* Set width to match height for a square */
+    height: 60px; /* Existing height, now enforced as square */
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    border-radius: 10px; /* Adjust for desired roundness */
 }
+/* END MODIFIED/ADDED STYLES FOR LOGOS */
 
 /* Navigation - Mobile First (Hidden by default, shown by JS) */
 nav {
@@ -313,12 +317,14 @@ footer {
     margin-top: 0.5rem;
 }
 
+/* START MODIFIED/ADDED STYLES FOR SOCIAL MEDIA ICONS */
 .social-media img {
-    height: 30px;
-    width: 30px;
+    height: 30px; /* Ensures consistent height */
+    width: 30px; /* Ensures consistent width for square icons */
     filter: invert(100%) brightness(150%) saturate(0%); /* Makes icons white */
     transition: filter 0.3s ease;
 }
+/* END MODIFIED/ADDED STYLES FOR SOCIAL MEDIA ICONS */
 
 .social-media img:hover {
     filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(300deg); /* Adjust for secondary color effect */

@@ -5,7 +5,7 @@
         "address": "101 Baker St, Cranbrook, BC V1C 1A2",
         "phone": "250-555-0011",
         "website": "https://www.kootenaycoffee.ca",
-        "image": "chamber/images/coffee.webp",
+        "image": "images/coffee.webp",
         "membershipLevel": 3,
         "otherInfo": "Local artisan coffee roasters."
       },
@@ -14,7 +14,7 @@
         "address": "450 Recreation Way, Cranbrook, BC V1C 1E1",
         "phone": "250-555-0022",
         "website": "https://www.cranbrooktrails.org",
-        "image": "chamber/images/trails.webp",
+        "image": "images/trails.webp",
         "membershipLevel": 1,
         "otherInfo": "Promoting and maintaining local hiking and biking trails."
       },
@@ -23,7 +23,7 @@
         "address": "200 Industrial Rd, Cranbrook, BC V1C 1G3",
         "phone": "250-555-0033",
         "website": "https://www.rockymtnhardware.com",
-        "image": "chamber/images/hardware.webp",
+        "image": "images/hardware.webp",
         "membershipLevel": 2,
         "otherInfo": "Your local source for all home improvement needs."
       },
@@ -32,7 +32,7 @@
         "address": "301 Main St, Cranbrook, BC V1C 1A5",
         "phone": "250-555-0044",
         "website": "https://www.pinnaclefinancial.ca",
-        "image": "chamber/images/financial.webp",
+        "image": "images/financial.webp",
         "membershipLevel": 3,
         "otherInfo": "Expert financial planning and advisory services."
       },
@@ -41,7 +41,7 @@
         "address": "150 Cranbrook St N, Cranbrook, BC V1C 1C7",
         "phone": "250-555-0055",
         "website": "https://www.cranbrookdental.com",
-        "image": "chamber/images/dental.webp",
+        "image": "images/dental.webp",
         "membershipLevel": 2,
         "otherInfo": "Comprehensive dental care for the whole family."
       },
@@ -50,7 +50,7 @@
         "address": "55 Auto Ave, Cranbrook, BC V1C 1J0",
         "phone": "250-555-0066",
         "website": "https://www.valleyautorepair.ca",
-        "image": "chamber/images/repair.webp",
+        "image": "images/repair.webp",
         "membershipLevel": 2,
         "otherInfo": "Reliable and honest automotive maintenance and repair."
       },
@@ -59,9 +59,9 @@
         "address": "700 Wellness Way, Cranbrook, BC V1C 1K2",
         "phone": "250-555-0077",
         "website": "https://www.kootenayyoga.ca",
-        "image": "chamber/images/yoga.webp",
+        "image": "images/yoga.webp",
         "membershipLevel": 1,
         "otherInfo": "Offering diverse yoga classes for all levels."
       }
     ]
-  }
+}
