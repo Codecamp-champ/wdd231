@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     const gridViewBtn = document.getElementById('grid-view');
     const listViewBtn = document.getElementById('list-view');
 
-    const membersDataPath = 'data/members.json'; // Path to your JSON file
+    const membersDataPath = 'data/members.json';
 
-    // Function to fetch members data
     async function getMembersData() {
         try {
             const response = await fetch(membersDataPath);
@@ -13,22 +12,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            return data.companies; // Assuming your JSON has a 'companies' array
+            return data.companies;
         } catch (error) {
             console.error('Error fetching members data:', error);
             memberDisplay.innerHTML = '<p>Failed to load member data. Please try again later.</p>';
-            return []; // Return empty array on error
+            return [];
         }
     }
 
-    // Function to create a member card
     function createMemberCard(member) {
         const card = document.createElement('div');
         card.classList.add('member-card');
 
         card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo">
-            <h2>${member.name}</h2>
+            <img src="${member.image}" alt="${member.name} Logo"> <h2>${member.name}</h2>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <a href="${member.website}" target="_blank">${member.website.replace(/(^\w+:|^)\/\//, '')}</a>
@@ -38,14 +35,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         return card;
     }
 
-    // Function to create a member list item
     function createMemberListItem(member) {
         const listItem = document.createElement('div');
         listItem.classList.add('member-list-item');
 
         listItem.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo">
-            <div class="member-info">
+            <img src="${member.image}" alt="${member.name} Logo"> <div class="member-info">
                 <h2>${member.name}</h2>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
@@ -56,11 +51,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         return listItem;
     }
 
-    // Function to display members based on current view
     async function displayMembers(viewType) {
         const members = await getMembersData();
-        memberDisplay.innerHTML = ''; // Clear current display
-        memberDisplay.className = ''; // Clear previous view classes
+        memberDisplay.innerHTML = '';
+        memberDisplay.className = '';
         memberDisplay.classList.add(viewType);
 
         members.forEach(member => {
@@ -72,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
 
-    // Event Listeners for view toggle buttons
     gridViewBtn.addEventListener('click', () => {
         gridViewBtn.classList.add('active');
         listViewBtn.classList.remove('active');
@@ -85,6 +78,5 @@ document.addEventListener('DOMContentLoaded', async function() {
         displayMembers('list');
     });
 
-    // Initial load: Display members in grid view by default
     displayMembers('grid');
 });
