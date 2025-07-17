@@ -18,16 +18,25 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuButton && mainNav) {
         menuButton.addEventListener('click', () => {
             mainNav.classList.toggle('open');
+            menuButton.setAttribute('aria-expanded', mainNav.classList.contains('open'));
             menuButton.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
         });
     }
 
     // Highlight active navigation link
-    const path = window.location.pathname.split('/').pop(); // Get current page filename
+    const path = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
+        link.classList.remove('active');
         if (link.getAttribute('href') === path) {
             link.classList.add('active');
         }
     });
+
+    if (path === '' || path === 'index.html') {
+        const homeLink = document.querySelector('nav ul li a[href="index.html"]');
+        if (homeLink) {
+            homeLink.classList.add('active');
+        }
+    }
 });
