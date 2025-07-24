@@ -1,17 +1,15 @@
 :root {
-    --primary-color: #005792; /* Dark Blue */
-    --secondary-color: #FDB813; /* Vibrant Yellow/Orange */
-    --background-color: #F8F8F8; /* Off-White */
-    --text-color: #333333; /* Dark Grey */
+    --primary-color: #005792;
+    --secondary-color: #FDB813;
+    --background-color: #F8F8F8;
+    --text-color: #333333;
 }
 
-/* Typography Variables (from Site Plan) */
 :root {
     --heading-font: 'Montserrat', sans-serif;
     --text-font: 'Open Sans', sans-serif;
 }
 
-/* General Body and Main Layout */
 body {
     font-family: var(--text-font);
     background-color: var(--background-color);
@@ -24,21 +22,20 @@ body {
 }
 
 header, footer {
-    background-color: #ffffff; /* White background for header/footer */
+    background-color: #ffffff;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 main {
-    flex: 1; /* Allows main content to grow and push footer down */
+    flex: 1;
     padding: 1rem;
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Center content */
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Header Specifics */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -48,20 +45,17 @@ main {
     width: 100%;
 }
 
-/* START MODIFIED/ADDED STYLES FOR LOGOS */
 .chamber-logo {
-    width: 60px; /* Set width to match height for a square */
-    height: 60px; /* Existing height, now enforced as square */
-    object-fit: cover; /* Ensures the image fills the square without distortion */
-    border-radius: 10px; /* Adjust for desired roundness */
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
 }
-/* END MODIFIED/ADDED STYLES FOR LOGOS */
 
-/* Navigation - Mobile First (Hidden by default, shown by JS) */
 nav {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 90px; /* Below header */
+    top: 90px;
     left: 0;
     width: 100%;
     background-color: var(--primary-color);
@@ -70,7 +64,7 @@ nav {
 }
 
 nav.open {
-    display: block; /* Show when open */
+    display: block;
 }
 
 nav ul {
@@ -119,7 +113,6 @@ nav ul li a.active {
     color: var(--primary-color);
 }
 
-/* Main content directory styles */
 .directory-main h1 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -157,7 +150,6 @@ nav ul li a.active {
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Member Display Area */
 #member-display {
     display: grid;
     gap: 20px;
@@ -219,10 +211,9 @@ nav ul li a.active {
     text-decoration: underline;
 }
 
-/* List View Specifics (Overwrites grid for list toggle) */
 #member-display.list {
     grid-template-columns: 1fr;
-    gap: 10px; /* Less gap for list */
+    gap: 10px;
 }
 
 .member-list-item {
@@ -271,7 +262,188 @@ nav ul li a.active {
     text-decoration: underline;
 }
 
-/* Footer Styling */
+.hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.home-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.8em;
+}
+
+.weather-card .current-weather p {
+    margin: 0.5rem 0;
+    font-size: 1.1em;
+}
+
+.weather-card .weather-icon {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}
+
+.weather-card h3 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+}
+
+.forecast-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.forecast-card {
+    background-color: var(--background-color);
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 1 calc(33% - 20px);
+    min-width: 100px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.forecast-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.forecast-card p {
+    margin: 0.2rem 0;
+    font-size: 0.9em;
+}
+
+.spotlights-card .spotlight-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.spotlight-card {
+    background-color: var(--background-color);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spotlight-card h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.spotlight-card .spotlight-logo {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.spotlight-card p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.spotlight-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.spotlight-card a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.spotlight-card .member-level {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
 footer {
     padding: 1.5rem 1rem;
     background-color: var(--primary-color);
@@ -317,17 +489,15 @@ footer {
     margin-top: 0.5rem;
 }
 
-/* START MODIFIED/ADDED STYLES FOR SOCIAL MEDIA ICONS */
 .social-media img {
-    height: 30px; /* Ensures consistent height */
-    width: 30px; /* Ensures consistent width for square icons */
-    filter: invert(100%) brightness(150%) saturate(0%); /* Makes icons white */
+    height: 30px;
+    width: 30px;
+    filter: invert(100%) brightness(150%) saturate(0%);
     transition: filter 0.3s ease;
 }
-/* END MODIFIED/ADDED STYLES FOR SOCIAL MEDIA ICONS */
 
 .social-media img:hover {
-    filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(300deg); /* Adjust for secondary color effect */
+    filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(300deg);
 }
 
 .dev-info {

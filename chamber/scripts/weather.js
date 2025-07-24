@@ -1,6 +1,6 @@
-const WEATHER_API_KEY = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}";
-const LATITUDE = 49.5044; // Latitude for Cranbrook, BC
-const LONGITUDE = -115.7725; // Longitude for Cranbrook, BC
+const WEATHER_API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
+const LATITUDE = 49.5044;
+const LONGITUDE = -115.7725;
 
 async function getWeatherData() {
     const weatherDisplay = document.getElementById("weather-display");

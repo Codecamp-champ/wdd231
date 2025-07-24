@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         card.classList.add('member-card');
 
         card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} Logo"> <h2>${member.name}</h2>
+            <img src="${member.image}" alt="${member.name} Logo">
+            <h2>${member.name}</h2>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <a href="${member.website}" target="_blank">${member.website.replace(/(^\w+:|^)\/\//, '')}</a>
@@ -40,7 +41,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         listItem.classList.add('member-list-item');
 
         listItem.innerHTML = `
-            <img src="${member.image}" alt="${member.name} Logo"> <div class="member-info">
+            <img src="${member.image}" alt="${member.name} Logo">
+            <div class="member-info">
                 <h2>${member.name}</h2>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>

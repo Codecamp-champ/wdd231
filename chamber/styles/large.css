@@ -24,4 +24,39 @@
     .member-list-item {
         padding: 20px 30px;
     }
+
+    .hero-image {
+        height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 4.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.6em;
+    }
+
+    .home-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-areas:
+            "events weather weather"
+            "spotlight1 spotlight2 spotlight3";
+    }
+
+    .event-card {
+        grid-area: events;
+    }
+
+    .weather-card {
+        grid-area: weather;
+    }
+
+    .spotlights-card {
+        grid-column: span 3;
+    }
+
+    .spotlights-card .spotlight-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
