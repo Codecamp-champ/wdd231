@@ -33,7 +33,7 @@
     }
 
     .hero-image {
-        height: 400px;
+        height: 400px; /* This overrides base.css for medium screens */
     }
 
     .hero-content h1 {

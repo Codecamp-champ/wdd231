@@ -26,7 +26,7 @@
     }
 
     .hero-image {
-        height: 500px;
+        height: 500px; /* This overrides previous heights for large screens */
     }
 
     .hero-content h1 {
