@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cranbrook Chamber of Commerce - Home</title>
-    <meta name="description" content="Welcome to the Cranbrook Chamber of Commerce. Supporting businesses and fostering economic growth in Cranbrook, BC.">
+    <meta name="description" content="Welcome to the Cranbrook Chamber of Commerce. Discover local businesses, events, and how to join our community in the heart of the Kootenays.">
     <meta name="author" content="Aaron Coker">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <meta property="og:title" content="Cranbrook Chamber of Commerce - Home">
-    <meta property="og:description" content="Your gateway to business support and community engagement in Cranbrook, BC.">
-    <meta property="og:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/cranbrook.webp">
-    <meta property="og:image:width" content="1200">
+    <meta property="og:description" content="Connect with the vibrant business community in Cranbrook, BC. The official Cranbrook Chamber of Commerce home page for events, resources, and member spotlights.">
+    <meta property="og:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/hero-large.webp"> <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://codecamp-champ.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
@@ -21,11 +20,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@cranbrookchamber">
     <meta name="twitter:title" content="Cranbrook Chamber of Commerce - Home">
-    <meta name="twitter:description" content="Supporting businesses and fostering economic growth in Cranbrook, BC.">
-    <meta name="twitter:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/cranbrook.webp">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="twitter:description" content="Your gateway to the Cranbrook business community. Find local events, valuable resources, and featured member spotlights.">
+    <meta name="twitter:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/hero-large.webp"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -61,45 +57,53 @@
             <picture>
                 <source srcset="images/hero-large.webp" media="(min-width: 900px)">
                 <source srcset="images/hero-medium.webp" media="(min-width: 600px)">
-                <img src="images/hero-small.webp" alt="Cranbrook Cityscape" loading="lazy">
+                <img src="images/hero-small.webp" alt="Scenic view of Cranbrook with mountains and valley" loading="lazy">
             </picture>
             <div class="hero-content">
-                <h1>Welcome to Cranbrook Chamber of Commerce</h1>
-                <p>Supporting local businesses and fostering community growth.</p>
-                <a href="membership.html" class="cta-button">Join the Chamber!</a>
+                <h1>Welcome to the Cranbrook Chamber of Commerce</h1>
+                <a href="membership.html" class="call-to-action">Join the Chamber!</a>
             </div>
         </section>
 
-        <section class="events-section">
-            <h2>Upcoming Events</h2>
-            <div class="event-card">
-                <h3>Annual Business Gala</h3>
-                <p>Date: August 15, 2025</p>
-                <p>Time: 6:00 PM - 10:00 PM</p>
-                <p>Location: Cranbrook Community Hall</p>
-                <p>Join us for an evening of networking and celebration!</p>
-            </div>
-            <div class="event-card">
-                <h3>Small Business Workshop</h3>
-                <p>Date: September 5, 2025</p>
-                <p>Time: 9:00 AM - 12:00 PM</p>
-                <p>Location: Chamber Boardroom</p>
-                <p>Learn strategies for effective online marketing.</p>
-            </div>
-        </section>
+        <section class="home-grid-container">
+            <section class="event-section card">
+                <h2>Upcoming Events</h2>
+                <div id="events-list">
+                    <p><strong>July 25, 2025:</strong> Annual Summer BBQ & Networking</p>
+                    <p class="event-location"><em>5:00 PM at Rotary Park</em></p>
+                    <hr>
+                    <p><strong>August 10, 2025:</strong> Business Growth Workshop</p>
+                    <p class="event-location"><em>9:00 AM at Chamber Office</em></p>
+                </div>
+            </section>
 
-        <section class="weather-section">
-            <h2>Current Weather in Cranbrook</h2>
-            <div id="weather-display">
-                <p>Loading weather data...</p>
-            </div>
-        </section>
+            <section class="weather-section card">
+                <h2>Cranbrook Weather</h2>
+                <div id="current-weather">
+                    <p>Current: <span id="current-temp">--</span>°C, <span id="weather-desc">--</span></p>
+                </div>
+                <div id="forecast">
+                    <h3>3-Day Forecast:</h3>
+                    <div class="forecast-day">
+                        <p>Tomorrow: <span id="day1-temp">--</span>°C</p>
+                        <p><span id="day1-desc">--</span></p>
+                    </div>
+                    <div class="forecast-day">
+                        <p>Day After: <span id="day2-temp">--</span>°C</p>
+                        <p><span id="day2-desc">--</span></p>
+                    </div>
+                    <div class="forecast-day">
+                        <p>Day 3: <span id="day3-temp">--</span>°C</p>
+                        <p><span id="day3-desc">--</span></p>
+                    </div>
+                </div>
+            </section>
 
-        <section class="spotlights-section">
-            <h2>Member Spotlights</h2>
-            <div id="spotlights-display">
-                <p>Loading member spotlights...</p>
-            </div>
+            <section class="spotlights-section card">
+                <h2>Member Spotlights</h2>
+                <div id="member-spotlights" class="spotlight-grid">
+                    </div>
+            </section>
         </section>
     </main>
 
