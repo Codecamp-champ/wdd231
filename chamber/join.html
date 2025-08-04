@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranbrook Chamber of Commerce - Join</title>
+    <meta name="description" content="Join the Cranbrook Chamber of Commerce and become a part of our thriving business community.">
+    <meta name="author" content="Aaron Coker">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Cranbrook Chamber of Commerce - Join">
+    <meta property="og:description" content="Become a member of the Cranbrook Chamber of Commerce to access exclusive benefits and networking opportunities.">
+    <meta property="og:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/cranbrook.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://codecamp-champ.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@cranbrookchamber">
+    <meta name="twitter:title" content="Cranbrook Chamber of Commerce - Join">
+    <meta name="twitter:description" content="Become a member of the Cranbrook Chamber of Commerce to access exclusive benefits and networking opportunities.">
+    <meta name="twitter:image" content="https://codecamp-champ.github.io/wdd231/chamber/images/cranbrook.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/join.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/kootenay.webp" alt="Cranbrook Chamber of Commerce Logo" class="chamber-logo">
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation">☰</button>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="join-main">
+        <h1>Join the Chamber</h1>
+        <div class="join-container">
+            <form method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+                    <label for="fname">First Name*
+                        <input type="text" id="fname" name="fname" required title="Applicant's first name" autocomplete="given-name">
+                    </label>
+                    <label for="lname">Last Name*
+                        <input type="text" id="lname" name="lname" required title="Applicant's last name" autocomplete="family-name">
+                    </label>
+                    <label for="orgtitle">Organizational Title
+                        <input type="text" id="orgtitle" name="orgtitle" title="Applicant's organizational title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" minlength="7">
+                    </label>
+                    <label for="email">Email*
+                        <input type="email" id="email" name="email" required title="Applicant's email address" autocomplete="email" placeholder="example@domain.com">
+                    </label>
+                    <label for="phone">Mobile Phone*
+                        <input type="tel" id="phone" name="phone" required title="Applicant's mobile phone number" autocomplete="tel">
+                    </label>
+                    <label for="bizname">Business/Organization Name*
+                        <input type="text" id="bizname" name="bizname" required title="Business or organization name" autocomplete="organization">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership Level</legend>
+                    <p>Select your desired membership level:</p>
+                    <label class="radio-label" for="np-membership"><input type="radio" id="np-membership" name="membership" value="np" required> NP Membership (No Fee)</label>
+                    <label class="radio-label" for="bronze-membership"><input type="radio" id="bronze-membership" name="membership" value="bronze"> Bronze Membership</label>
+                    <label class="radio-label" for="silver-membership"><input type="radio" id="silver-membership" name="membership" value="silver"> Silver Membership</label>
+                    <label class="radio-label" for="gold-membership"><input type="radio" id="gold-membership" name="membership" value="gold"> Gold Membership</label>
+                </fieldset>
+
+                <label for="description">Business/Organization Description
+                    <textarea id="description" name="description" rows="5" title="Business or organization description"></textarea>
+                </label>
+                <input type="hidden" name="timestamp" id="timestamp">
+                <input type="submit" value="Join the Chamber">
+            </form>
+
+            <div class="membership-cards-container">
+                <div class="card membership-card np-card" id="np-card">
+                    <h3>NP Membership</h3>
+                    <p>No Fee</p>
+                    <a href="#" class="details-link" data-modal="np-modal">Learn More</a>
+                </div>
+                <div class="card membership-card bronze-card" id="bronze-card">
+                    <h3>Bronze Membership</h3>
+                    <p>$50/month</p>
+                    <a href="#" class="details-link" data-modal="bronze-modal">Learn More</a>
+                </div>
+                <div class="card membership-card silver-card" id="silver-card">
+                    <h3>Silver Membership</h3>
+                    <p>$100/month</p>
+                    <a href="#" class="details-link" data-modal="silver-modal">Learn More</a>
+                </div>
+                <div class="card membership-card gold-card" id="gold-card">
+                    <h3>Gold Membership</h3>
+                    <p>$250/month</p>
+                    <a href="#" class="details-link" data-modal="gold-modal">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="np-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <ul>
+                    <li>Basic listing in the online directory.</li>
+                    <li>Access to a monthly newsletter.</li>
+                    <li>Invitation to select networking events.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <ul>
+                    <li>All NP benefits.</li>
+                    <li>Discounted rates on most Chamber events.</li>
+                    <li>One free business workshop per year.</li>
+                    <li>Basic analytics for your directory listing.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <ul>
+                    <li>All Bronze benefits.</li>
+                    <li>Two free business workshops per year.</li>
+                    <li>Priority placement in one quarterly newsletter.</li>
+                    <li>Spotlight opportunity on the Chamber website once per year.</li>
+                    <li>Exclusive access to VIP events.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <ul>
+                    <li>All Silver benefits.</li>
+                    <li>Unlimited business workshops.</li>
+                    <li>Featured business spotlight on the home page once per quarter.</li>
+                    <li>Dedicated business development advisor.</li>
+                    <li>Exclusive sponsorship opportunities for major Chamber events.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Cranbrook Chamber of Commerce</h3>
+                <p>123 Main Street, Cranbrook, BC V1C 1A1</p>
+                <p>Phone: (250) 555-1234</p>
+                <p>Email: <a href="mailto:info@cranbrook.ca">info@cranbrook.ca</a></p>
+            </div>
+            <div class="social-media">
+                <a href="#" aria-label="Facebook"><img src="images/facebook-icon.svg" alt="Facebook"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/link-icon.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Instagram"><img src="images/insta_icon.svg" alt="Instagram"></a>
+            </div>
+            <div class="dev-info">
+                <p>&copy; <span id="current-year"></span> Cranbrook Chamber of Commerce | Aaron Coker | WDD 231</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/join.js"></script>
+</body>
+</html>
