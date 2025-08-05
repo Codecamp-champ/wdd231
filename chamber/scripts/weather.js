@@ -8,7 +8,7 @@ async function getWeatherData() {
 
     // Fetch current weather
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
-    
+
     // Fetch 5-day forecast
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
 
@@ -41,43 +41,39 @@ function displayWeatherData(currentData, forecastData) {
     const weatherIconCode = currentData.weather[0].icon;
     const weatherIconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
 
-    let htmlContent = `
+    const dailyForecasts = forecastData.list.filter(item => item.dt_txt.includes('12:00:00'));
+
+    const forecastCardsHtml = dailyForecasts.slice(0, 3).map(daily => {
+        const forecastDate = new Date(daily.dt * 1000);
+        const dayOfWeek = forecastDate.toLocaleDateString('en-US', { weekday: 'short' });
+        const forecastTemp = daily.main.temp.toFixed(0);
+        const forecastDescription = daily.weather[0].description;
+        const forecastIconCode = daily.weather[0].icon;
+        const forecastIconUrl = `https://openweathermap.org/img/wn/${forecastIconCode}.png`;
+
+        return `
+            <div class="forecast-card">
+                <h4>${dayOfWeek}</h4>
+                <p>${forecastTemp}°F</p>
+                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
+            </div>
+        `;
+    }).join('');
+
+    weatherDisplay.innerHTML = `
         <div class="current-weather">
             <p>Current Temperature: <strong>${currentTemp}°F</strong></p>
-            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="${weatherDescription}" class="weather-icon"></p>
+            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
         </div>
         <h3>3-Day Forecast:</h3>
         <div class="forecast-cards">
+            ${forecastCardsHtml}
+        </div>
     `;
-
-    // Filter forecast data for one entry per day
-    const dailyForecasts = forecastData.list.filter(item => item.dt_txt.includes('12:00:00'));
-
-    for (let i = 0; i < 3; i++) {
-        if (dailyForecasts[i]) {
-            const daily = dailyForecasts[i];
-            const forecastDate = new Date(daily.dt * 1000);
-            const dayOfWeek = forecastDate.toLocaleDateString('en-US', { weekday: 'short' });
-            const forecastTemp = daily.main.temp.toFixed(0);
-            const forecastDescription = daily.weather[0].description;
-            const forecastIconCode = daily.weather[0].icon;
-            const forecastIconUrl = `https://openweathermap.org/img/wn/${forecastIconCode}.png`;
-
-            htmlContent += `
-                <div class="forecast-card">
-                    <h4>${dayOfWeek}</h4>
-                    <p>${forecastTemp}°F</p>
-                    <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="${forecastDescription}" class="weather-icon"></p>
-                </div>
-            `;
-        }
-    }
-
-    htmlContent += `</div>`;
-    weatherDisplay.innerHTML = htmlContent;
 }
 
 function capitalizeFirstLetter(string) {
+    if (!string) return '';
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
