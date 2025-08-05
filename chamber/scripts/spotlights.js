@@ -1,60 +1,71 @@
-async function loadSpotlights() {
-    const spotlightsDisplay = document.getElementById("spotlights-display");
-    if (!spotlightsDisplay) return;
+document.addEventListener('DOMContentLoaded', () => {
+    const spotlightsDisplay = document.getElementById('spotlights-display');
+    const apiUrl = 'https://codecamp-champ.github.io/wdd231/chamber/data/members.json';
 
-    try {
-        const response = await fetch("data/members.json");
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+    async function getSpotlights() {
+        try {
+            const response = await fetch(apiUrl);
+            if (response.ok) {
+                const data = await response.json();
+                displaySpotlights(data.companies);
+            } else {
+                throw new Error('Failed to fetch spotlights.');
+            }
+        } catch (error) {
+            console.error('Error fetching spotlights:', error);
+            spotlightsDisplay.innerHTML = '<p>Error loading member spotlights. Please try again later.</p>';
         }
-        const data = await response.json();
-        const members = data.companies;
+    }
 
-        const eligibleMembers = members.filter(member =>
-            member.membershipLevel === 3 || member.membershipLevel === 2
-        );
-
-        for (let i = eligibleMembers.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [eligibleMembers[i], eligibleMembers[j]] = [eligibleMembers[j], eligibleMembers[i]];
-        }
-
-        const numberOfSpotlights = Math.floor(Math.random() * 2) + 2;
-        const selectedSpotlights = eligibleMembers.slice(0, Math.min(numberOfSpotlights, eligibleMembers.length));
-
-        if (selectedSpotlights.length === 0) {
-            spotlightsDisplay.innerHTML = "<p>No Gold or Silver members to display in spotlights at this time.</p>";
+    function displaySpotlights(companies) {
+        const goldAndSilverMembers = companies.filter(member => member.membershipLevel >= 2);
+        
+        if (goldAndSilverMembers.length === 0) {
+            spotlightsDisplay.innerHTML = '<p>No current member spotlights to display.</p>';
             return;
         }
 
-        let htmlContent = '<div class="spotlight-cards">';
-        selectedSpotlights.forEach(member => {
-            let membershipLevelString = '';
-            if (member.membershipLevel === 3) {
-                membershipLevelString = 'Gold';
-            } else if (member.membershipLevel === 2) {
-                membershipLevelString = 'Silver';
-            }
+        const randomSpotlights = [];
+        const shuffledMembers = goldAndSilverMembers.sort(() => 0.5 - Math.random());
+        
+        for (let i = 0; i < Math.min(3, shuffledMembers.length); i++) {
+            randomSpotlights.push(shuffledMembers[i]);
+        }
 
-            htmlContent += `
-                <div class="spotlight-card">
-                    <h3>${member.name}</h3>
-                    <img src="${member.image}" alt="${member.name} Logo" loading="lazy" class="spotlight-logo">
-                    <p><strong>Address:</strong> ${member.address}</p>
-                    <p><strong>Phone:</strong> ${member.phone}</p>
-                    <p><strong>Website:</strong> <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace(/(^\w+:|^)\/\//, '')}</a></p>
-                    <p><strong>Membership Level:</strong> <span class="member-level">${membershipLevelString}</span></p>
-                    ${member.otherInfo ? `<p class="description">${member.otherInfo}</p>` : ''}
-                </div>
-            `;
+        const spotlightsContainer = document.createElement('div');
+        spotlightsContainer.className = 'spotlight-cards';
+        
+        randomSpotlights.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'spotlight-card';
+            
+            const logo = document.createElement('img');
+            logo.src = member.image;
+            logo.alt = member.name + ' Logo';
+            logo.loading = 'lazy';
+            logo.className = 'spotlight-logo';
+            
+            const name = document.createElement('h3');
+            name.textContent = member.name;
+            
+            const info = document.createElement('p');
+            info.textContent = member.otherInfo;
+            
+            const website = document.createElement('a');
+            website.href = member.website;
+            website.textContent = 'Learn More';
+            website.target = '_blank';
+            
+            card.appendChild(logo);
+            card.appendChild(name);
+            card.appendChild(info);
+            card.appendChild(website);
+            spotlightsContainer.appendChild(card);
         });
-        htmlContent += '</div>';
-        spotlightsDisplay.innerHTML = htmlContent;
 
-    } catch (error) {
-        console.error("Error loading member spotlights:", error);
-        spotlightsDisplay.innerHTML = "<p>Could not load member spotlights.</p>";
+        spotlightsDisplay.innerHTML = '';
+        spotlightsDisplay.appendChild(spotlightsContainer);
     }
-}
 
-document.addEventListener("DOMContentLoaded", loadSpotlights);
+    getSpotlights();
+});

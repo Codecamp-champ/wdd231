@@ -1,4 +1,8 @@
 @media (min-width: 600px) {
+    body {
+        padding: 0;
+    }
+
     #menu-button {
         display: none;
     }
@@ -33,7 +37,7 @@
     }
 
     .hero-image {
-        height: 400px; /* This overrides base.css for medium screens */
+        height: 400px;
     }
 
     .hero-content h1 {

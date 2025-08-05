@@ -1,33 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Set the hidden timestamp field to the current date and time
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date();
+    const formattedDate = today.toLocaleString('en-US', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    });
     const timestampField = document.getElementById('timestamp');
     if (timestampField) {
-        const now = new Date();
-        timestampField.value = now.toISOString();
+        timestampField.value = formattedDate;
     }
 
-    // Modal functionality
-    const modalTriggers = document.querySelectorAll('.details-link');
+    const modalLinks = document.querySelectorAll('.details-link');
     const modals = document.querySelectorAll('.modal');
     const closeButtons = document.querySelectorAll('.close-button');
 
-    modalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (event) => {
-            event.preventDefault();
-            const modalId = trigger.dataset.modal;
+    modalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = link.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-            }
+            modal.style.display = 'block';
         });
     });
 
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
             const modal = button.closest('.modal');
-            if (modal) {
-                modal.style.display = 'none';
-            }
+            modal.style.display = 'none';
         });
     });
 

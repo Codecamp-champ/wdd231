@@ -16,6 +16,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -29,7 +30,6 @@ header, footer {
 
 main {
     flex: 1;
-    padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -270,10 +270,8 @@ nav ul li a.active {
 
 .hero-image {
     width: 100%;
-    /* CHANGED: Let height adjust automatically based on aspect ratio */
     height: auto;
-    /* Optional: You can set a max-height if you don't want it to get too tall */
-    max-height: 300px; /* Example max height for small screens */
+    max-height: 300px;
     object-fit: cover;
     display: block;
     border-radius: 8px;
@@ -478,7 +476,7 @@ footer {
 }
 
 .contact-info a {
-    color: var(--secondary-color);
+    color: #ffffff;
     text-decoration: none;
 }
 
