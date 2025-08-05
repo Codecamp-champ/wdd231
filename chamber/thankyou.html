@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v30/JTUSjIg1_i6t8kCHKm459Wlhzg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v43/memvYaGs10bi0ZqS-UJr.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -23,7 +26,7 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo-link">
-                <img src="images/kootenay.webp" alt="Cranbrook Chamber of Commerce Logo" class="chamber-logo" loading="lazy">
+                <img src="images/kootenay.webp" alt="Cranbrook Chamber of Commerce Logo" class="chamber-logo" width="60" height="60" loading="lazy">
             </a>
             <button id="menu-button" aria-label="Toggle Navigation">☰</button>
             <nav>
@@ -66,9 +69,9 @@
                 <p>Email: <a href="mailto:info@cranbrook.ca">info@cranbrook.ca</a></p>
             </div>
             <div class="social-media">
-                <a href="#" aria-label="Facebook"><img src="images/facebook-icon.svg" alt="Facebook" loading="lazy"></a>
-                <a href="#" aria-label="LinkedIn"><img src="images/link-icon.svg" alt="LinkedIn" loading="lazy"></a>
-                <a href="#" aria-label="Instagram"><img src="images/insta_icon.svg" alt="Instagram" loading="lazy"></a>
+                <a href="#" aria-label="Facebook Profile"><img src="images/facebook-icon.svg" alt="Facebook" width="30" height="30" loading="lazy"></a>
+                <a href="#" aria-label="LinkedIn Profile"><img src="images/link-icon.svg" alt="LinkedIn" width="30" height="30" loading="lazy"></a>
+                <a href="#" aria-label="Instagram Profile"><img src="images/insta_icon.svg" alt="Instagram" width="30" height="30" loading="lazy"></a>
             </div>
             <div class="dev-info">
                 <p>&copy; <span id="current-year"></span> Cranbrook Chamber of Commerce | Aaron Coker | WDD 231</p>
@@ -76,7 +79,7 @@
             </div>
         </div>
     </footer>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/thankyou.js"></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
 </body>
 </html>
