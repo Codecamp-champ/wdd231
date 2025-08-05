@@ -73,4 +73,34 @@
         text-align: right;
         width: auto;
     }
+
+    .discover-main {
+        display: grid;
+        grid-template-areas:
+            "sidebar gallery";
+        grid-template-columns: 1fr 3fr;
+        gap: 1em;
+        padding: 1rem;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        padding: 1em;
+    }
+
+    .discover-grid {
+        grid-area: gallery;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    
+    .attraction-card {
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 }

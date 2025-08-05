@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Cranbrook</title>
+    <meta name="description" content="Explore attractions and interesting places in Cranbrook, British Columbia.">
+    <meta name="author" content="Aaron Coker">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v30/JTUSjIg1_i6t8kCHKm459Wlhzg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v43/memvYaGs10bi0ZqS-UJr.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/kootenay.webp" alt="Cranbrook Chamber of Commerce Logo" class="chamber-logo" width="60" height="60" loading="lazy">
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation">☰</button>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="discover-main">
+        <div class="sidebar">
+            <h2 class="visitor-message-title">Visitor Information</h2>
+            <div id="visit-message" class="visit-message"></div>
+        </div>
+        
+        <div id="discover-grid" class="discover-grid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Cranbrook Chamber of Commerce</h3>
+                <p>123 Main Street, Cranbrook, BC V1C 1A1</p>
+                <p>Phone: (250) 555-1234</p>
+                <p>Email: <a href="mailto:info@cranbrook.ca">info@cranbrook.ca</a></p>
+            </div>
+            <div class="social-media">
+                <a href="#" aria-label="Facebook Profile"><img src="images/facebook-icon.svg" alt="" width="30" height="30" loading="lazy"></a>
+                <a href="#" aria-label="LinkedIn Profile"><img src="images/link-icon.svg" alt="" width="30" height="30" loading="lazy"></a>
+                <a href="#" aria-label="Instagram Profile"><img src="images/insta_icon.svg" alt="" width="30" height="30" loading="lazy"></a>
+            </div>
+            <div class="dev-info">
+                <p>&copy; <span id="current-year"></span> Cranbrook Chamber of Commerce | Aaron Coker | WDD 231</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</body>
+</html>

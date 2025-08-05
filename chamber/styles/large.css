@@ -59,4 +59,31 @@
     .spotlights-card .spotlight-cards {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+    
+    .discover-main {
+        grid-template-columns: 1fr 4fr;
+        gap: 2em;
+    }
+
+    .discover-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5em;
+    }
+
+    .attraction-card figure img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    
+    .attraction-card figure img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+
+    .attraction-card h2 {
+        font-size: 1.8em;
+    }
+
+    .attraction-card p {
+        font-size: 1em;
+    }
 }
