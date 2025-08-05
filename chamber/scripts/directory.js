@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const viewToggle = document.querySelector('.view-toggle');
+    const membersUrl = 'data/members.json';
+    const memberDisplay = document.getElementById('member-display');
     const gridViewBtn = document.getElementById('grid-view');
     const listViewBtn = document.getElementById('list-view');
-    const memberDisplay = document.getElementById('member-display');
-
-    const apiUrl = 'https://codecamp-champ.github.io/wdd231/chamber/data/members.json';
+    let membersData = [];
 
     async function getMembers() {
         try {
-            const response = await fetch(apiUrl);
-            if (response.ok) {
-                const data = await response.json();
-                displayMembers(data.companies, 'grid');
-            } else {
-                throw new Error('Failed to fetch member data.');
+            const response = await fetch(membersUrl);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
+            membersData = await response.json();
+            displayMembers(membersData, 'grid');
         } catch (error) {
-            console.error('Error fetching members:', error);
-            memberDisplay.innerHTML = '<p>Error loading business directory. Please try again later.</p>';
+            console.error('There was a problem fetching member data:', error);
+            memberDisplay.innerHTML = '<p>Sorry, we could not load the business directory at this time.</p>';
         }
     }
 
@@ -26,87 +24,63 @@ document.addEventListener('DOMContentLoaded', () => {
         memberDisplay.className = view;
 
         members.forEach(member => {
+            const card = document.createElement('div');
+            card.className = view === 'grid' ? 'member-card' : 'member-list-item';
+
+            // Create and configure the image element with explicit width and height
+            const img = document.createElement('img');
+            img.src = member.image;
+            img.alt = `Logo of ${member.name}`;
+            img.setAttribute('width', '100');
+            img.setAttribute('height', '100');
+            img.setAttribute('loading', 'lazy'); // Still lazy load to optimize performance
+
+            const infoDiv = document.createElement('div');
+            infoDiv.className = view === 'grid' ? 'member-info' : 'member-info';
+
+            const name = document.createElement('h2');
+            name.textContent = member.name;
+
+            const address = document.createElement('p');
+            address.textContent = member.address;
+
+            const phone = document.createElement('p');
+            phone.textContent = member.phone;
+
+            const website = document.createElement('a');
+            website.href = member.website;
+            website.textContent = member.website;
+            website.target = '_blank';
+
+            infoDiv.appendChild(name);
+            infoDiv.appendChild(address);
+            infoDiv.appendChild(phone);
+            infoDiv.appendChild(website);
+
+            card.appendChild(img);
+            card.appendChild(infoDiv);
+
             if (view === 'grid') {
-                const card = document.createElement('div');
-                card.className = 'member-card';
-
-                const logo = document.createElement('img');
-                logo.src = member.image;
-                logo.alt = member.name + ' Logo';
-                logo.loading = 'lazy';
-                card.appendChild(logo);
-
-                const name = document.createElement('h2');
-                name.textContent = member.name;
-                card.appendChild(name);
-
-                const address = document.createElement('p');
-                address.textContent = member.address;
-                card.appendChild(address);
-
-                const phone = document.createElement('p');
-                phone.textContent = member.phone;
-                card.appendChild(phone);
-
-                const website = document.createElement('a');
-                website.href = member.website;
-                website.textContent = 'Visit Website';
-                website.target = '_blank';
-                card.appendChild(website);
-
-                memberDisplay.appendChild(card);
-            } else if (view === 'list') {
-                const listItem = document.createElement('div');
-                listItem.className = 'member-list-item';
-
-                const logo = document.createElement('img');
-                logo.src = member.image;
-                logo.alt = member.name + ' Logo';
-                logo.loading = 'lazy';
-                listItem.appendChild(logo);
-
-                const info = document.createElement('div');
-                info.className = 'member-info';
-
-                const name = document.createElement('h2');
-                name.textContent = member.name;
-                info.appendChild(name);
-
-                const address = document.createElement('p');
-                address.textContent = member.address;
-                info.appendChild(address);
-
-                const phone = document.createElement('p');
-                phone.textContent = member.phone;
-                info.appendChild(phone);
-
-                const website = document.createElement('a');
-                website.href = member.website;
-                website.textContent = 'Visit Website';
-                website.target = '_blank';
-                info.appendChild(website);
-
-                listItem.appendChild(info);
-                memberDisplay.appendChild(listItem);
+                const membershipLevel = document.createElement('p');
+                membershipLevel.textContent = `Membership: ${member.membershipLevel}`;
+                infoDiv.appendChild(membershipLevel);
             }
+
+            memberDisplay.appendChild(card);
         });
     }
 
-    if (gridViewBtn) {
-        gridViewBtn.addEventListener('click', () => {
-            gridViewBtn.classList.add('active');
-            listViewBtn.classList.remove('active');
-            getMembers().then(data => displayMembers(data.companies, 'grid'));
-        });
-    }
+    gridViewBtn.addEventListener('click', () => {
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+        displayMembers(membersData, 'grid');
+    });
 
-    if (listViewBtn) {
-        listViewBtn.addEventListener('click', () => {
-            listViewBtn.classList.add('active');
-            gridViewBtn.classList.remove('active');
-            getMembers().then(data => displayMembers(data.companies, 'list'));
-        });
-    }
+    listViewBtn.addEventListener('click', () => {
+        listViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+        displayMembers(membersData, 'list');
+    });
 
     getMembers();
 });
