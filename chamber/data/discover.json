@@ -3,49 +3,49 @@
         {
             "name": "Cranbrook History Centre",
             "address": "573 Railway Ave, Cranbrook, BC",
-            "image": "images/cranbrook-history-centre.webp",
+            "image": "images/cranhis.webp",
             "description": "A museum showcasing the history of rail travel and the Cranbrook area with an impressive collection of vintage locomotives."
         },
         {
             "name": "Fort Steele Heritage Town",
             "address": "9851 BC-93, Fort Steele, BC",
-            "image": "images/fort-steele.webp",
+            "image": "images/fortsteele.webp",
             "description": "An authentic pioneer town from the 1890s, offering a living history experience with restored buildings and costumed interpreters."
         },
         {
             "name": "Cranbrook Community Forest",
             "address": "Wycliffe Park Rd, Cranbrook, BC",
-            "image": "images/cranbrook-forest.webp",
+            "image": "images/crancom.webp",
             "description": "A vast network of trails perfect for hiking, mountain biking, and snowshoeing, with stunning views of the surrounding mountains."
         },
         {
             "name": "Fisher Peak",
             "address": "Kootenay National Park, BC",
-            "image": "images/fisher-peak.webp",
+            "image": "images/fisherpeak.webp",
             "description": "The highest peak in the southern Rockies, a popular destination for experienced hikers seeking a challenging ascent and breathtaking views."
         },
         {
             "name": "St. Eugene Golf Resort",
             "address": "7777 Mission Rd, Cranbrook, BC",
-            "image": "images/st-eugene.webp",
+            "image": "images/steug.webp",
             "description": "A luxury resort with a world-class golf course and a casino, set in a beautifully restored historic residential school building."
         },
         {
             "name": "Jim Smith Lake Provincial Park",
             "address": "Jim Smith Lake Rd, Cranbrook, BC",
-            "image": "images/jim-smith-lake.webp",
+            "image": "images/jimsmith.webp",
             "description": "A tranquil park with a small, warm lake perfect for swimming, canoeing, and picnics during the summer months."
         },
         {
             "name": "The Elizabeth Lake Sanctuary",
             "address": "Elizabeth Lake Rd, Cranbrook, BC",
-            "image": "images/elizabeth-lake.webp",
+            "image": "images/elizabethlake.webp",
             "description": "A serene wetland area and wildlife sanctuary, known for its boardwalk trails and excellent bird watching opportunities."
         },
         {
             "name": "Key City Theatre",
             "address": "1000 17th St N, Cranbrook, BC",
-            "image": "images/key-city-theatre.webp",
+            "image": "images/keycity.webp",
             "description": "The premier venue for live entertainment in the East Kootenay region, hosting a variety of concerts, plays, and events."
         }
     ]
