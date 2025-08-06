@@ -10,7 +10,6 @@
     --text-font: 'Open Sans', sans-serif;
 }
 
-/* Global Reset and Box Sizing */
 html {
     box-sizing: border-box;
 }
@@ -18,7 +17,6 @@ html {
     box-sizing: inherit;
 }
 
-/* Base Body Styles */
 body {
     font-family: var(--text-font);
     background-color: var(--background-color);
@@ -31,7 +29,6 @@ body {
     min-height: 100vh;
 }
 
-/* Main Content Area */
 main {
     flex: 1;
     max-width: 1200px;
@@ -39,13 +36,11 @@ main {
     width: 100%;
 }
 
-/* Image Responsiveness */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Header and Footer */
 header, footer {
     background-color: #ffffff;
     padding: 1rem;
@@ -70,7 +65,6 @@ header, footer {
     border-radius: 10px;
 }
 
-/* Navigation Menu (Mobile) */
 nav {
     display: none;
     position: absolute;
@@ -132,13 +126,11 @@ nav ul li a.active {
     color: var(--primary-color);
 }
 
-/* Shared Card and Layouts */
 h1, h2, h3, h4 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -197,7 +189,6 @@ h1, h2, h3, h4 {
     color: var(--secondary-color);
 }
 
-/* Home Page Grid */
 .home-grid {
     display: grid;
     gap: 20px;
@@ -221,7 +212,6 @@ h1, h2, h3, h4 {
     font-size: 1.8em;
 }
 
-/* Weather Card */
 .weather-card .current-weather p {
     margin: 0.5rem 0;
     font-size: 1.1em;
@@ -268,7 +258,6 @@ h1, h2, h3, h4 {
     font-size: 0.9em;
 }
 
-/* Member Spotlights */
 .spotlights-card .spotlight-cards {
     display: grid;
     gap: 20px;
@@ -325,7 +314,6 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
-/* Discover Page Styles */
 .attraction-card figure img {
     width: 100%;
     height: 200px;
@@ -337,7 +325,6 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
-/* Footer */
 footer {
     padding: 1.5rem 1rem;
     background-color: var(--primary-color);

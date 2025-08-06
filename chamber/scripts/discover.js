@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const visitMessageDiv = document.getElementById('visit-message');
     const attractionsUrl = 'data/discover.json';
 
-    // Function to handle the visitor message logic using localStorage
     function displayVisitMessage() {
         const lastVisit = Number(localStorage.getItem('lastVisit'));
         const now = Date.now();
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lastVisit', now);
     }
 
-    // Function to get and display the attractions
     async function getAttractions() {
         try {
             const response = await fetch(attractionsUrl);
@@ -35,11 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             displayAttractions(data.attractions);
         } catch (error) {
             console.error('Error fetching attractions data:', error);
-            discoverGrid.innerHTML = '<p>Could not load attractions data.</p>';
+            discoverGrid.innerHTML = '<p>Could not load attractions data. Please check file paths.</p>';
         }
     }
 
-    // Function to build and display the attraction cards
     function displayAttractions(attractions) {
         discoverGrid.innerHTML = '';
         attractions.forEach(attraction => {
@@ -53,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = attraction.image;
             img.alt = attraction.name;
+            // The JSON image dimensions are 300x200
             img.setAttribute('width', '300');
             img.setAttribute('height', '200');
             img.setAttribute('loading', 'lazy');
