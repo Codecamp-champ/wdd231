@@ -12,7 +12,6 @@
 
 /* Global Reset and Box Sizing */
 html {
-    /* Ensures padding and borders are included in the element's total width and height */
     box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -26,7 +25,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
-    padding: 0 1rem; /* Adds padding for small screens */
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -34,7 +33,7 @@ body {
 
 /* Main Content Area */
 main {
-    flex: 1; /* Allows main to grow and fill available vertical space */
+    flex: 1;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -42,7 +41,6 @@ main {
 
 /* Image Responsiveness */
 img {
-    /* Prevents images from overflowing their container */
     max-width: 100%;
     height: auto;
 }
@@ -329,7 +327,6 @@ h1, h2, h3, h4 {
 
 /* Discover Page Styles */
 .attraction-card figure img {
-    /* Ensures all images in the Discover gallery are a uniform size */
     width: 100%;
     height: 200px;
     object-fit: cover;
