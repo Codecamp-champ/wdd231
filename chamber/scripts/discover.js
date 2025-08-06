@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttribute('width', '300');
             img.setAttribute('height', '200');
             
-            // Only lazily load images that are likely below the fold
             if (index > 2) {
                 img.setAttribute('loading', 'lazy');
             }
