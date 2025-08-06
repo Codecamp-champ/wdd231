@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"></noscript>
     
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -79,7 +79,19 @@
             </div>
         </div>
     </footer>
-
+    
+    <script>
+    (function() {
+      var l = function() {
+        var a = document.createElement('link'); a.rel = 'stylesheet';
+        a.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(a, h);
+      };
+      var raf = requestAnimationFrame || setTimeout;
+      raf(l);
+    })();
+    </script>
+    
     <script src="scripts/main.js" defer></script>
     <script src="scripts/discover.js" defer></script>
 </body>
