@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Iceland Project Plan</title>
+    <meta name="author" content="Aaron Coker">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+      
+        :root {
+            --primary-color: #0A2342;
+            --secondary-color: #AEC6CF;
+            --accent-color: #E8F1F2;
+            --text-color: #333;
+            --heading-font: 'Roboto', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-family: var(--heading-font);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        p, ul {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--text-color);
+            vertical-align: middle;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+        
+        .primary-color { background-color: var(--primary-color); }
+        .secondary-color { background-color: var(--secondary-color); }
+        .accent-color { background-color: var(--accent-color); }
+
+        .font-example-roboto {
+            font-family: var(--heading-font);
+            font-weight: 700;
+        }
+        
+        .font-example-open-sans {
+            font-family: var(--body-font);
+        }
+
+        pre {
+            background-color: #f1f1f1;
+            color: var(--text-color);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://placehold.co/60x60/AEC6CF/0A2342?text=IS" alt="Explore Iceland Logo" class="logo">
+        <h1>Explore Iceland Site Plan</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Site Name</h2>
+            <p><strong>Explore Iceland</strong>. This name is direct, descriptive, and memorable, clearly communicating the site's purpose as a travel guide for the country.</p>
+        </section>
+
+        <section>
+            <h2>Site Purpose</h2>
+            <p>The "Explore Iceland" website is a three-page site designed to be a comprehensive resource for travelers. The project will showcase dynamic and responsive design, accessibility best practices, and the use of modern JavaScript functionality. Content will be driven by a **local JSON file** for attractions and a **remote API** for live weather data, fulfilling key course objectives while building an attractive and functional travel guide.</p>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <p>These questions represent the target audience's needs and will drive the site's content.</p>
+            <ul>
+                <li><strong>Scenario 1: Itinerary Planning</strong><br>A traveler is planning a trip for next summer. They ask, "What are the must-see waterfalls and black sand beaches on the South Coast?"</li>
+                <li><strong>Scenario 2: Weather and Packing</strong><br>A visitor wants to know what to pack. They ask, "What is the weather like in October, and what should I pack to stay warm and dry while hiking?"</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color Schema</h2>
+            <p>The color palette is inspired by Iceland's dramatic landscape and flag, ensuring a consistent and appealing design.</p>
+            <ul>
+                <li><strong>Primary Color: `#0A2342` (Dark Blue)</strong><br>Used for the header background, section headings, and other key design elements. <span class="color-box primary-color"></span></li>
+                <li><strong>Secondary Color: `#AEC6CF` (Light Blue/Gray)</strong><br>Used as an accent for borders, navigation links, and subtle design details. <span class="color-box secondary-color"></span></li>
+                <li><strong>Accent Color: `#E8F1F2` (Off-white)</strong><br>Used for the main content background, providing a clean and readable canvas. <span class="color-box accent-color"></span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+            <p>Two distinct fonts will be used to create a clear visual hierarchy and maintain readability.</p>
+            <ul>
+                <li><strong>Headings: 'Roboto', sans-serif</strong><br>A clean, modern font that will be used for all headings (h1, h2, etc.) to grab user attention. <span class="font-example-roboto">Example: EXPLORE ICELAND</span></li>
+                <li><strong>Body Text: 'Open Sans', sans-serif</strong><br>A highly readable and versatile font that will be used for all paragraph and body text. <span class="font-example-open-sans">Example: This is a paragraph of text.</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Wireframe: Home Page Layout</h2>
+            <p>The home page layout is designed for both mobile and wider screens to ensure a responsive user experience.</p>
+            <h3>Mobile View</h3>
+            <pre>
++--------------------+
+| [Logo] [Hamburger] | (Header: Explore Iceland Logo, Nav Menu)
++--------------------+
+| [Hero Image/Video] | (Full-width scenic image of Iceland)
+| [Headline Text]    | (e.g., "Discover the Land of Ice and Fire")
+| [Call to Action]   | (e.g., "Start Planning Your Trip")
++--------------------+
+| [Section: Intro]   | (Brief introduction to Iceland's attractions)
+| [Short Text]       |
++--------------------+
+| [Featured Photos]  | (Grid of 3-4 photos with brief captions)
+| [Photo 1]          |
+| [Photo 2]          |
++--------------------+
+| [Footer Nav/Social]| (Quick links, social media icons, video link)
++--------------------+
+            </pre>
+            <p>This mobile layout prioritizes a strong visual impact with a hero section at the top, followed by vertically stacked content blocks for easy scrolling. The hamburger menu handles navigation, optimizing space.</p>
+            <h3>Larger View (Wide Desktop)</h3>
+            <pre>
++-------------------------------------------------------------+
+| [Logo] [Explore Iceland]     [Nav: Home | Attractions | Weather | Contact] |
++-------------------------------------------------------------+
+|                                                             |
+|           [Large Hero Section with Scenic Video/Image]      |
+|           [Prominent Headline: "Explore the Land of Ice and Fire"] |
+|           [Sub-headline: "Your ultimate guide to Iceland."] |
+|           [Large Call to Action Button: "Discover Attractions"] |
+|                                                             |
++-------------------------------------------------------------+
+| [About Iceland Section]                                     |
+| [Image: Map/Landscape] [Text: Intro to Iceland's geography and culture] |
+|                                                             |
++-------------------------------------------------------------+
+| [Featured Attractions Section] (3-column grid)              |
+| +-----------------+ +-----------------+ +-----------------+ |
+| | [Attraction 1]  | | [Attraction 2]  | | [Attraction 3]  | |
+| | [Image]         | | [Image]         | | [Image]         | |
+| | [Name]          | | [Name]          | | [Name]          | |
+| | [Brief Desc]    | | [Brief Desc]    | | [Brief Desc]    | |
+| +-----------------+ +-----------------+ +-----------------+ |
+| [Button: "View All Attractions"]                            |
++-------------------------------------------------------------+
+| [Weather Forecast Snippet]                                  |
+| [Icon] [Current Temp] [Upcoming 3-Day Forecast]             |
++-------------------------------------------------------------+
+| [Footer: Nav Links | Social Icons | Copyright | Video]      |
++-------------------------------------------------------------+
+            </pre>
+            <p>The desktop wireframe features a robust horizontal navigation. The hero section dominates the top, followed by distinct, multi-column content areas for an introduction, featured attractions, and a weather snippet. A comprehensive footer completes the layout.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Aaron Coker | WDD 231</p>
+        <p>Explore Iceland. All rights reserved. | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+</body>
+</html>
