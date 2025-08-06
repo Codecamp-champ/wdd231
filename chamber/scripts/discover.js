@@ -50,9 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = attraction.image;
             img.alt = attraction.name;
+            // Ensure width and height are set to prevent layout shifts
             img.setAttribute('width', '300');
             img.setAttribute('height', '200');
             
+            // Only lazily load images that are likely below the fold
             if (index > 2) {
                 img.setAttribute('loading', 'lazy');
             }

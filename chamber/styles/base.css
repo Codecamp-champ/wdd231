@@ -344,7 +344,8 @@ footer {
 }
 
 .contact-info h3 {
-    color: var(--secondary-color);
+    /* Final fix for contrast issue */
+    color: var(--light-text);
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1.2em;
@@ -391,4 +392,12 @@ footer {
 .dev-info p {
     margin: 0.3rem 0;
     color: var(--light-text);
+}
+
+/* FINAL FIX: Ensure touch targets are large enough */
+button,
+a.cta-button,
+a.logo-link {
+    min-height: 44px;
+    min-width: 44px;
 }
