@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const membersUrl = 'data/members.json';
+    const membersUrl = 'members.json'; // Corrected path to the JSON file
     const memberDisplay = document.getElementById('member-display');
     const gridViewBtn = document.getElementById('grid-view');
     const listViewBtn = document.getElementById('list-view');
