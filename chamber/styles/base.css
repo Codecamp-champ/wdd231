@@ -332,6 +332,7 @@ footer {
     font-size: 0.9em;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    min-height: 150px;
 }
 
 .footer-content {
@@ -394,7 +395,6 @@ footer {
     color: var(--light-text);
 }
 
-/* FINAL FIX: Ensure touch targets are large enough */
 button,
 a.cta-button,
 a.logo-link {
