@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the captivating land of fire and ice: Iceland. Discover its stunning landscapes, popular attractions, and current weather conditions.">
+    <meta name="author" content="Aaron Coker"> 
+    <title>Discover Iceland: Land of Fire and Ice</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/finalproject.css">
+    <link rel="stylesheet" href="styles/finalprojectlarge.css" media="(min-width: 1024px)">
+    <script src="scripts/finalproject.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Explore Iceland</h1> 
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#weather">Weather</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/simonmigaj.webp" media="(min-width: 1024px)">
+                <source srcset="images/simonmigaj.webp" media="(min-width: 768px)">
+                <img src="images/simonmigaj.webp" alt="Icelandic Landscape with Northern Lights" loading="lazy">
+            </picture>
+            <div class="hero-text">
+                <h2>Land of Fire and Ice</h2>
+                <p>Discover the breathtaking beauty and unique landscapes of Iceland.</p>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About Iceland</h2>
+            <p>Iceland, a Nordic island nation, is defined by its dramatic landscape with volcanoes, geysers, hot springs and lava fields. Massive glaciers are protected in Vatnajökull and Snæfellsjökull National Parks. Most of the population lives in the capital, Reykjavík, which runs on geothermal power and is home to the National and Saga museums, chronicling Iceland’s Viking history.</p>
+            <p>Despite its name, Iceland experiences a relatively mild climate due to the Gulf Stream. However, its weather can be notoriously unpredictable, with rapid changes from sun to rain, and strong winds are common. This ever-changing weather adds to the adventurous spirit of exploring the island.</p>
+        </section>
+
+        <section id="attractions" class="content-section">
+            <h2>Popular Attractions</h2>
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <h3>The Blue Lagoon</h3>
+                    <p>A geothermal spa known for its milky-blue waters rich in silica and sulfur, located in a lava field near Grindavík.</p>
+                </div>
+                <div class="attraction-card">
+                    <h3>Golden Circle</h3>
+                    <p>A popular tourist route in southern Iceland, covering about 300 kilometers, looping from Reykjavík into the southern uplands of Iceland and back.</p>
+                </div>
+                <div class="attraction-card">
+                    <h3>Jökulsárlón Glacier Lagoon</h3>
+                    <p>A large glacial lake in southeast Iceland, on the edge of Vatnajökull National Park. It's famous for the icebergs that break off from the glacier.</p>
+                </div>
+                <div class="attraction-card">
+                    <h3>Diamond Beach</h3>
+                    <p>Adjacent to Jökulsárlón, this black sand beach is where icebergs from the lagoon wash ashore, resembling scattered diamonds.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="weather" class="content-section weather-section">
+            <h2>Current Weather <span class="weather-icon-desktop"></span></h2>
+            <div class="weather-details">
+                <p>Temperature: <span id="temperature-value">5°C</span></p>
+                <p>Wind Speed: <span id="windspeed-value">10 km/h</span></p>
+                <p>Wind Chill: <span id="windchill-value">N/A</span></p>
+            </div>
+            <img src="images/weather.svg" alt="Cloudy weather icon" class="weather-icon-mobile" width="50" height="50">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Aaron Coker | British Columbia, Canada</p>
+        <p>Explore Iceland | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+header {
+    padding: 1rem 6rem; /* Example: Overriding padding for large screens */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.hero {
+    height: 70vh; /* Taller hero section on large screens */
+}
+
+.hero-text h2 {
+    font-size: 4.5rem;
+}
+
+.hero-text p {
+    font-size: 1.8rem;
+}
+
+.attractions-grid {
+    grid-template-columns: repeat(4, 1fr); /* Four columns for large screens */
+}
+
+.content-section {
+    padding: 3rem;
+}
