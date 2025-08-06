@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayAttractions(attractions) {
         discoverGrid.innerHTML = '';
-        attractions.forEach(attraction => {
+        attractions.forEach((attraction, index) => {
             const card = document.createElement('div');
             card.className = 'attraction-card';
 
@@ -53,7 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Set explicit dimensions for the image to prevent CLS
             img.setAttribute('width', '300');
             img.setAttribute('height', '200');
-            img.setAttribute('loading', 'lazy');
+            
+            // Only lazily load images that are likely below the fold (e.g., after the third card)
+            if (index > 2) {
+                img.setAttribute('loading', 'lazy');
+            }
+
             figure.appendChild(img);
 
             const address = document.createElement('address');
