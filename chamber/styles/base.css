@@ -352,7 +352,8 @@ footer {
 
 .contact-info p {
     margin: 0.2rem 0;
-    color: rgba(255,255,255,0.9);
+    /* FIXED: Changed to solid light text color for better contrast */
+    color: var(--light-text);
 }
 
 .contact-info a {
@@ -390,5 +391,6 @@ footer {
 
 .dev-info p {
     margin: 0.3rem 0;
-    color: rgba(255,255,255,0.8);
+    /* FIXED: Changed to solid light text color for better contrast */
+    color: var(--light-text);
 }
