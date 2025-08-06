@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = attraction.image;
             img.alt = attraction.name;
-            // The JSON image dimensions are 300x200
+            // Set explicit dimensions for the image to prevent CLS
             img.setAttribute('width', '300');
             img.setAttribute('height', '200');
             img.setAttribute('loading', 'lazy');
