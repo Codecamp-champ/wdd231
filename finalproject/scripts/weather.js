@@ -1,57 +1,79 @@
-const weatherDataSource = 'data/weather.json';
+const WEATHER_API_KEY = '2d7a0b25d9910e4763e5868f0c50f3d2';
+const LATITUDE = 63.9850;
+const LONGITUDE = -22.6056;
 
-/**
- * Calculates the wind chill factor based on temperature and wind speed.
- * @param {number} temp - Air temperature in degrees Celsius.
- * @param {number} wind - Wind speed in km/h.
- * @returns {string} - The calculated wind chill in °C, or 'N/A' if conditions are not met.
- */
-function calculateWindChill(temp, wind) {
-    // Viable Wind Chill Calculation Conditions (Metric):
-    // Temperature must be <= 10 °C (50°F)
-    // Wind speed must be > 4.8 km/h (3 mph)
-    if (temp <= 10 && wind > 4.8) {
-        // Metric Wind Chill Formula (Environment Canada / J.E. Osczevski formula)
-        // Twc = 13.12 + 0.6215Ta - 11.37V^0.16 + 0.3965TaV^0.16
-        // Ta = air temperature in degrees Celsius
-        // V = wind speed in km/h
-        const windChill = 13.12 + (0.6215 * temp) - (11.37 * Math.pow(wind, 0.16)) + (0.3965 * temp * Math.pow(wind, 0.16));
-        return `${windChill.toFixed(1)} °C`;
-    } else {
-        return 'N/A';
+// This function is now exported to be used by main.js
+export async function fetchAndDisplayWeather() {
+    const weatherDisplay = document.getElementById("weather-display");
+    if (!weatherDisplay) return;
+
+    // Fetch current weather
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
+
+    // Fetch 5-day forecast
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
+
+    try {
+        const [currentResponse, forecastResponse] = await Promise.all([
+            fetch(currentWeatherUrl),
+            fetch(forecastUrl)
+        ]);
+
+        if (!currentResponse.ok || !forecastResponse.ok) {
+            throw new Error('One or more API responses were not successful.');
+        }
+
+        const currentData = await currentResponse.json();
+        const forecastData = await forecastResponse.json();
+
+        displayWeatherData(currentData, forecastData);
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+        weatherDisplay.innerHTML = "<p>Could not load weather data. Please check your API key and network connection.</p>";
     }
 }
 
-/**
- * Fetches weather data from a local JSON file and displays it on the page.
- * Includes error handling for the fetch operation.
- */
-export async function fetchAndDisplayWeather() {
-    try {
-        const response = await fetch(weatherDataSource);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const weatherData = await response.json();
-        
-        // Populate the weather section with data
-        const tempElement = document.getElementById('temperature-value');
-        const windSpeedElement = document.getElementById('windspeed-value');
-        const windChillElement = document.getElementById('windchill-value');
+function displayWeatherData(currentData, forecastData) {
+    const weatherDisplay = document.getElementById("weather-display");
+    if (!weatherDisplay) return;
 
-        if (tempElement) tempElement.textContent = `${weatherData.temperature}°C`;
-        if (windSpeedElement) windSpeedElement.textContent = `${weatherData.windSpeed} km/h`;
+    const currentTemp = currentData.main.temp.toFixed(0);
+    const weatherDescription = currentData.weather[0].description;
+    const weatherIconCode = currentData.weather[0].icon;
+    const weatherIconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
 
-        // Calculate and display windchill
-        const windChillResult = calculateWindChill(weatherData.temperature, weatherData.windSpeed);
-        if (windChillElement) windChillElement.textContent = windChillResult;
+    const dailyForecasts = forecastData.list.filter(item => item.dt_txt.includes('12:00:00'));
 
-    } catch (error) {
-        console.error('Failed to fetch weather data:', error);
-        // Display a user-friendly error message on the page
-        const weatherSection = document.getElementById('weather');
-        if (weatherSection) {
-            weatherSection.innerHTML = `<h2>Current Weather</h2><p>Failed to load weather data. Please try again later.</p><p>Error: ${error.message}</p>`;
-        }
-    }
+    const forecastCardsHtml = dailyForecasts.slice(0, 3).map(daily => {
+        const forecastDate = new Date(daily.dt * 1000);
+        const dayOfWeek = forecastDate.toLocaleDateString('en-US', { weekday: 'short' });
+        const forecastTemp = daily.main.temp.toFixed(0);
+        const forecastDescription = daily.weather[0].description;
+        const forecastIconCode = daily.weather[0].icon;
+        const forecastIconUrl = `https://openweathermap.org/img/wn/${forecastIconCode}.png`;
+
+        return `
+            <div class="forecast-card">
+                <h4>${dayOfWeek}</h4>
+                <p>${forecastTemp}°F</p>
+                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
+            </div>
+        `;
+    }).join('');
+
+    weatherDisplay.innerHTML = `
+        <div class="current-weather">
+            <p>Current Temperature: <strong>${currentTemp}°F</strong></p>
+            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
+        </div>
+        <h3>3-Day Forecast:</h3>
+        <div class="forecast-cards">
+            ${forecastCardsHtml}
+        </div>
+    `;
+}
+
+function capitalizeFirstLetter(string) {
+    if (!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
