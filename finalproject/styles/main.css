@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #0A2342; /* Dark Blue */
-    --secondary-color: #AEC6CF; /* Light Blue/Gray */
-    --accent-color: #E8F1F2; /* Off-white */
+    --primary-color: #0A2342;
+    --secondary-color: #AEC6CF;
+    --accent-color: #E8F1F2;
     --text-color: #333;
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
@@ -10,11 +10,10 @@
     --button-bg: var(--primary-color);
     --button-text: var(--accent-color);
     --button-hover-bg: #071a33;
-    --form-field-border: #ccc; /* Lighter border for form fields */
-    --form-field-focus-border: var(--primary-color); /* Darker border on focus */
+    --form-field-border: #ccc;
+    --form-field-focus-border: var(--primary-color);
 }
 
-/* Basic Resets */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -26,16 +25,15 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--accent-color);
-    min-height: 100vh; /* Ensure body takes full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 main {
-    flex: 1; /* Allows main content to grow and push footer down */
+    flex: 1;
 }
 
-/* Header and Navigation */
 header {
     background-color: var(--primary-color);
     color: var(--accent-color);
@@ -43,7 +41,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* For positioning the mobile nav menu */
+    position: relative;
 }
 
 header h1 {
@@ -52,7 +50,6 @@ header h1 {
     margin: 0;
 }
 
-/* Hamburger Menu for Mobile */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -63,7 +60,7 @@ header h1 {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10; /* Ensure it's above the nav menu */
+    z-index: 10;
 }
 
 .hamburger .bar {
@@ -73,7 +70,6 @@ header h1 {
     transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger animation */
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
@@ -85,12 +81,11 @@ header h1 {
 }
 
 
-/* Mobile navigation menu */
 header nav ul.nav-menu {
-    display: none; /* Hidden by default on mobile */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Position below header */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: var(--primary-color);
@@ -101,7 +96,6 @@ header nav ul.nav-menu {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Show navigation menu when active */
 header nav ul.nav-menu.active {
     display: flex;
 }
@@ -120,11 +114,10 @@ header nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
-    height: 60vh; /* Adjust as needed */
+    height: 60vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -140,15 +133,15 @@ header nav a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Puts image behind text */
-    filter: brightness(0.7); /* Slightly darken image for text readability */
+    z-index: -1;
+    filter: brightness(0.7);
 }
 
 .hero-text {
-    position: relative; /* Ensures text is above image */
+    position: relative;
     z-index: 1;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for text */
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
 }
 
@@ -164,7 +157,6 @@ header nav a:hover {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* Content Sections */
 .content-section {
     padding: 2rem;
     margin: 1.5rem auto;
@@ -183,10 +175,9 @@ header nav a:hover {
     padding-bottom: 0.5rem;
 }
 
-/* Attractions Grid */
 .attractions-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
@@ -210,15 +201,14 @@ header nav a:hover {
 }
 
 .attraction-card img {
-    max-width: 100%;
-    height: 180px; /* Fixed height for image consistency */
+    width: 100%;
+    height: 180px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
-    display: block; /* Ensure no extra space below image */
+    display: block;
 }
 
-/* Lazy loading placeholder */
 img[data-src] {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -278,7 +268,7 @@ form button[type="submit"]:active {
 }
 
 .attraction-card .favorite-button.favorited {
-    background-color: #e74c3c; /* Red color for favorited */
+    background-color: #e74c3c;
     color: white;
 }
 
@@ -287,7 +277,6 @@ form button[type="submit"]:active {
 }
 
 
-/* Weather Section */
 .weather-section {
     display: flex;
     flex-direction: column;
@@ -302,14 +291,13 @@ form button[type="submit"]:active {
 }
 
 .weather-icon-desktop {
-    display: none; /* Hidden by default, shown on wider screens via media query */
+    display: none;
 }
 
 .weather-icon-mobile {
-    display: block; /* Shown by default, hidden on wider screens */
+    display: block;
 }
 
-/* Footer */
 footer {
     background-color: var(--footer-background);
     color: var(--footer-text-color);
@@ -338,7 +326,6 @@ footer p {
     text-decoration: underline;
 }
 
-/* --- HTML Form Styles --- */
 form {
     display: flex;
     flex-direction: column;
@@ -365,7 +352,7 @@ form legend {
 }
 
 form label {
-    display: block; /* Default to block for mobile */
+    display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
     color: var(--text-color);
@@ -379,7 +366,7 @@ form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
-    border: 1px solid var(--form-field-border); /* Lighter border */
+    border: 1px solid var(--form-field-border);
     border-radius: 4px;
     font-family: var(--body-font);
     font-size: 1rem;
@@ -392,32 +379,31 @@ form input[type="tel"]:focus,
 form select:focus,
 form textarea:focus {
     outline: none;
-    border-color: var(--form-field-focus-border); /* Darker border on focus */
-    box-shadow: 0 0 0 3px rgba(10, 35, 66, 0.2); /* Subtle focus ring */
+    border-color: var(--form-field-focus-border);
+    box-shadow: 0 0 0 3px rgba(10, 35, 66, 0.2);
 }
 
 form textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
 }
 
-/* --- Modal Dialog Styles --- */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
 .modal.active {
-    display: flex; /* Show when active */
+    display: flex;
 }
 
 .modal-content {
@@ -481,7 +467,6 @@ form textarea {
     cursor: pointer;
 }
 
-/* --- Form Action Page Styles --- */
 #submission-details p {
     background-color: var(--accent-color);
     border: 1px solid var(--secondary-color);
@@ -497,18 +482,17 @@ form textarea {
 }
 
 
-/* --- Media Queries for Larger Screens --- */
 @media (min-width: 768px) {
     header {
         padding: 1rem 4rem;
     }
 
     .hamburger {
-        display: none; /* Hide hamburger menu */
+        display: none;
     }
 
     header nav ul.nav-menu {
-        display: flex; /* Show horizontal menu */
+        display: flex;
         position: static;
         flex-direction: row;
         gap: 1.5rem;
@@ -530,7 +514,7 @@ form textarea {
     }
 
     .attractions-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns */
+        grid-template-columns: 1fr 1fr;
     }
 
     .weather-section {
@@ -544,31 +528,30 @@ form textarea {
     }
 
     .weather-icon-desktop {
-        display: inline-block; /* Show desktop icon */
+        display: inline-block;
     }
     .weather-icon-desktop::after {
-        content: "⛅"; /* Pseudo-element for desktop weather icon */
-        font-size: 2rem; /* Adjust size as needed */
+        content: "⛅";
+        font-size: 2rem;
         vertical-align: middle;
         margin-left: 0.5rem;
     }
 
     .weather-icon-mobile {
-        display: none; /* Hide mobile icon */
+        display: none;
     }
 
-    /* Updated form styles for larger screens using Grid */
     form fieldset {
         display: grid;
-        grid-template-columns: 120px 1fr; /* Fixed width for label, rest for input */
-        gap: 1rem; /* Space between rows and columns */
-        align-items: center; /* Vertically align items in the grid */
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+        align-items: center;
     }
 
     form label {
-        grid-column: 1; /* Label takes the first column */
+        grid-column: 1;
         text-align: right;
-        margin-bottom: 0; /* Remove previous margin-bottom */
+        margin-bottom: 0;
     }
 
     form input[type="text"],
@@ -576,20 +559,20 @@ form textarea {
     form input[type="tel"],
     form select,
     form textarea {
-        grid-column: 2; /* Input takes the second column */
-        width: auto; /* Let grid manage width */
-        margin-bottom: 0; /* Remove previous margin-bottom */
+        grid-column: 2;
+        width: auto;
+        margin-bottom: 0;
     }
 
     form button[type="submit"] {
-        grid-column: 1 / span 2; /* Button spans both columns */
-        width: fit-content; /* Adjust button width to content */
-        margin: 1rem auto 0; /* Center button horizontally within the grid area */
+        grid-column: 1 / span 2;
+        width: fit-content;
+        margin: 1rem auto 0;
     }
 }
 
 @media (min-width: 1024px) {
     .attractions-grid {
-        grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
