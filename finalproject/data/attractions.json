@@ -65,7 +65,7 @@
         "location": "South Coast",
         "description": "A unique waterfall where visitors can walk behind the cascading water, offering a memorable perspective.",
         "details": "This waterfall is particularly popular for its walkable path behind the curtain of water, especially beautiful during sunset. Bring waterproof clothing!",
-        "image": "seljalandsfoss.webp",
+        "image": "seljalw.webp",
         "type": "Waterfall",
         "rating": 4.6
     },
@@ -75,7 +75,7 @@
         "location": "South Coast",
         "description": "A massive rock arch protruding into the sea, offering stunning coastal views and a popular spot for puffin watching.",
         "details": "Dyrhólaey is a promontory with a lighthouse and panoramic views of the black sand beaches, glaciers, and the impressive rock arch. It's a protected nature reserve.",
-        "image": "dyrholaey.webp",
+        "image": "dyrarch.webp",
         "type": "Landmark",
         "rating": 4.5
     },
@@ -85,7 +85,7 @@
         "location": "Reykjavík",
         "description": "Reykjavík's iconic landmark church, known for its unique architecture inspired by basalt columns and a tower offering city views.",
         "details": "This impressive Lutheran parish church dominates the Reykjavík skyline. Visitors can take an elevator to the top of the tower for incredible 360-degree views of the city and surrounding mountains.",
-        "image": "hallgrimskirkja.webp",
+        "image": "hallgrim.webp",
         "type": "Architecture",
         "rating": 4.5
     },
@@ -95,7 +95,7 @@
         "location": "Golden Circle",
         "description": "A UNESCO World Heritage site where the North American and Eurasian tectonic plates meet and drift apart, creating a dramatic rift valley.",
         "details": "Historically significant as the site of Iceland's ancient parliament, Alþingi. It's also popular for snorkeling and diving in the crystal-clear Silfra fissure.",
-        "image": "thingvellir.webp",
+        "image": "ping.webp",
         "type": "National Park",
         "rating": 4.7
     },
@@ -105,7 +105,7 @@
         "location": "Highlands",
         "description": "A stunning geothermal wonderland in the Highlands, famous for its vibrant rhyolite mountains and natural hot springs.",
         "details": "Accessible primarily in summer via F-roads, Landmannalaugar is a hiker's paradise with trails ranging from easy walks to multi-day treks. The colorful mountains are a result of volcanic activity.",
-        "image": "landmannalaugar.webp",
+        "image": "landman.webp",
         "type": "Nature Reserve",
         "rating": 4.9
     },
@@ -125,7 +125,7 @@
         "location": "Southeast Iceland",
         "description": "Europe's largest glacier and surrounding area, offering diverse landscapes including ice caves, volcanoes, and geothermal activity.",
         "details": "This vast national park encompasses a huge variety of natural wonders. Activities include glacier hiking, ice caving (seasonal), and exploring the various outlets of the glacier.",
-        "image": "vatnajokull.webp",
+        "image": "varnajok.webp",
         "type": "National Park",
         "rating": 4.9
     },
@@ -135,7 +135,7 @@
         "location": "West Iceland",
         "description": "Often called 'Iceland in Miniature' due to its diverse landscapes, including a glacier, black sand beaches, and charming fishing villages.",
         "details": "This peninsula is home to Snæfellsjökull glacier, a stratovolcano, and numerous picturesque spots like Arnarstapi, Hellnar, and the iconic Kirkjufell mountain.",
-        "image": "snæfellsnes.webp",
+        "image": "snaefell.webp",
         "type": "Peninsula",
         "rating": 4.8
     },
@@ -145,7 +145,7 @@
         "location": "Snæfellsnes Peninsula",
         "description": "A distinctive, arrow-shaped mountain often considered one of Iceland's most photographed landmarks, especially with its nearby waterfall, Kirkjufellsfoss.",
         "details": "This mountain gained international fame from Game of Thrones. Its unique shape and the scenic waterfall in the foreground make it a popular spot for photographers.",
-        "image": "kirkjufell.webp",
+        "image": "kirk.webp",
         "type": "Mountain",
         "rating": 4.7
     },
@@ -165,7 +165,7 @@
         "location": "South Iceland",
         "description": "A magnificent and winding canyon with steep walls, carved by glacial meltwater over thousands of years.",
         "details": "This impressive canyon offers walking paths along its edges, providing breathtaking views of the river below and the unique rock formations. It gained popularity after being featured in a Justin Bieber music video.",
-        "image": "fjaðrárgljúfur.webp",
+        "image": "fjaorar.webp",
         "type": "Canyon",
         "rating": 4.5
     }
