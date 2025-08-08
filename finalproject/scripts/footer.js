@@ -1,13 +1,12 @@
-export function setupFooter() {
-    // Set current year in footer
-    const currentYearSpan = document.getElementById('currentyear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
+export function updateFooter() {
+    const lastModified = document.getElementById('lastModified');
+    const currentYear = document.getElementById('currentyear');
+    
+    if (lastModified) {
+        lastModified.textContent = document.lastModified;
     }
-
-    // Set last modified date in footer
-    const lastModifiedSpan = document.getElementById('lastModified');
-    if (lastModifiedSpan) {
-        lastModifiedSpan.textContent = document.lastModified;
+    
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
     }
 }
