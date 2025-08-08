@@ -50,7 +50,6 @@ header {
     position: relative;
 }
 
-/* The h1 rule above now handles the font size for all h1s, including this one */
 header h1 {
     margin: 0;
 }
