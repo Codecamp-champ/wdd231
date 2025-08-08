@@ -1,16 +1,12 @@
 const WEATHER_API_KEY = '2d7a0b25d9910e4763e5868f0c50f3d2';
-const LATITUDE = 63.9850;
-const LONGITUDE = -22.6056;
+const LATITUDE = 49.5044;
+const LONGITUDE = -115.7725;
 
-// This function is now exported to be used by main.js
-export async function fetchAndDisplayWeather() {
+async function getWeatherData() {
     const weatherDisplay = document.getElementById("weather-display");
     if (!weatherDisplay) return;
 
-    // Fetch current weather
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
-
-    // Fetch 5-day forecast
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${WEATHER_API_KEY}&units=imperial`;
 
     try {
@@ -28,7 +24,7 @@ export async function fetchAndDisplayWeather() {
 
         displayWeatherData(currentData, forecastData);
     } catch (error) {
-        // Removed console.error for production-readiness
+        console.error("Error fetching weather data:", error);
         weatherDisplay.innerHTML = "<p>Could not load weather data. Please check your API key and network connection.</p>";
     }
 }
@@ -56,7 +52,7 @@ function displayWeatherData(currentData, forecastData) {
             <div class="forecast-card">
                 <h4>${dayOfWeek}</h4>
                 <p>${forecastTemp}°F</p>
-                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="Weather icon" class="weather-icon" width="50" height="50"></p>
+                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="Weather icon for ${forecastDescription}" class="weather-icon" width="50" height="50"></p>
             </div>
         `;
     }).join('');
@@ -64,7 +60,7 @@ function displayWeatherData(currentData, forecastData) {
     weatherDisplay.innerHTML = `
         <div class="current-weather">
             <p>Current Temperature: <strong>${currentTemp}°F</strong></p>
-            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="Weather icon" class="weather-icon" width="50" height="50"></p>
+            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="Weather icon for ${weatherDescription}" class="weather-icon" width="50" height="50"></p>
         </div>
         <h3>3-Day Forecast:</h3>
         <div class="forecast-cards">
@@ -77,3 +73,7 @@ function capitalizeFirstLetter(string) {
     if (!string) return '';
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    getWeatherData();
+});
