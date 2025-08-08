@@ -147,7 +147,6 @@ header nav a:hover {
 
 .hero-text h1 {
     font-family: var(--heading-font);
-    /* Explicitly setting font size to address the deprecated API warning */
     font-size: 2.5rem; 
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
