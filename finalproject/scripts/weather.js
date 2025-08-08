@@ -28,7 +28,7 @@ export async function fetchAndDisplayWeather() {
 
         displayWeatherData(currentData, forecastData);
     } catch (error) {
-        console.error("Error fetching weather data:", error);
+        // Removed console.error for production-readiness
         weatherDisplay.innerHTML = "<p>Could not load weather data. Please check your API key and network connection.</p>";
     }
 }
