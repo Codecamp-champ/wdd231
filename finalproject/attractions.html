@@ -7,17 +7,17 @@
     <meta name="description" content="Discover popular and hidden gem attractions across Iceland, from geothermal spas to majestic waterfalls and unique geological formations.">
     <meta name="author" content="Aaron Coker">
 
-    <!-- Open Graph Tags for Social Sharing -->
     <meta property="og:title" content="Icelandic Attractions">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-github-username.github.io/wdd231/finalproject/attractions.html">
     <meta property="og:image" content="https://your-github-username.github.io/wdd231/finalproject/images/attractions-og.webp">
     <meta property="og:description" content="Explore a comprehensive list of Iceland's most captivating attractions.">
     <meta property="og:locale" content="en_US">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"></noscript>
     
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/attractions.js" defer type="module"></script>
@@ -44,8 +44,7 @@
             <h2>Iceland's Must-See Attractions</h2>
             <p>Dive into the diverse beauty of Iceland with our curated list of popular attractions and hidden gems. Click on any attraction to learn more!</p>
             <div id="attractions-container" class="attractions-grid">
-                <!-- Attractions will be dynamically loaded here by JavaScript -->
-            </div>
+                </div>
         </section>
     </main>
 
@@ -58,7 +57,6 @@
         </div>
     </footer>
 
-    <!-- Modal Dialog Structure -->
     <dialog id="attraction-modal" class="modal">
         <div class="modal-content">
             <button class="close-button" aria-label="Close dialog">&times;</button>

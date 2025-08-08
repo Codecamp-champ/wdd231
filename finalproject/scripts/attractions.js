@@ -7,19 +7,16 @@ const attractionModal = document.getElementById('attraction-modal');
 const closeModalButton = document.querySelector('.modal .close-button');
 const favoriteButton = document.getElementById('favorite-button');
 
-let currentAttraction = null; // To keep track of the attraction currently in the modal
+let currentAttraction = null;
+let attractionsData = []; // Store fetched data here
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     setupNavToggle();
     setupFooter();
-    fetchAndDisplayAttractions();
+    await fetchAndDisplayAttractions();
     setupModalEvents();
 });
 
-/**
- * Fetches attraction data from a local JSON file.
- * @returns {Promise<Array>} A promise that resolves to an array of attraction objects.
- */
 async function fetchAttractions() {
     try {
         const response = await fetch(attractionsDataSource);
@@ -33,25 +30,25 @@ async function fetchAttractions() {
         if (attractionsContainer) {
             attractionsContainer.innerHTML = '<p class="error-message">Failed to load attractions. Please try again later.</p>';
         }
-        return []; // Return empty array on error
+        return [];
     }
 }
 
-/**
- * Dynamically creates and appends attraction cards to the DOM.
- * @param {Array} attractions - An array of attraction objects.
- */
+async function fetchAndDisplayAttractions() {
+    attractionsData = await fetchAttractions();
+    if (attractionsData.length > 0) {
+        displayAttractions(attractionsData);
+    }
+}
+
 function displayAttractions(attractions) {
     if (!attractionsContainer) return;
+    attractionsContainer.innerHTML = '';
 
-    attractionsContainer.innerHTML = ''; // Clear existing content
-
-    // Retrieve favorited attractions from local storage
     const favoritedAttractions = getFavoritedAttractions();
 
-    // Use forEach to iterate over the attractions array
     attractions.forEach(attraction => {
-        // Use template literals to construct the HTML for each card
+        const isFavorited = favoritedAttractions.includes(attraction.id);
         const cardHtml = `
             <div class="attraction-card" data-id="${attraction.id}">
                 <img data-src="images/${attraction.image}" alt="${attraction.name}" class="lazy-load-img">
@@ -62,8 +59,8 @@ function displayAttractions(attractions) {
                 <p>${attraction.description}</p>
                 <div class="card-buttons">
                     <button class="learn-more-button" data-id="${attraction.id}">Learn More</button>
-                    <button class="favorite-button ${favoritedAttractions.includes(attraction.id) ? 'favorited' : ''}" data-id="${attraction.id}">
-                        ${favoritedAttractions.includes(attraction.id) ? 'Favorited' : 'Add to Favorites'}
+                    <button class="favorite-button ${isFavorited ? 'favorited' : ''}" data-id="${attraction.id}">
+                        ${isFavorited ? 'Favorited' : 'Add to Favorites'}
                     </button>
                 </div>
             </div>
@@ -71,15 +68,10 @@ function displayAttractions(attractions) {
         attractionsContainer.insertAdjacentHTML('beforeend', cardHtml);
     });
 
-    // Setup event listeners for the newly created buttons
     setupCardButtonListeners();
-    // Initialize lazy loading for images
     setupLazyLoading();
 }
 
-/**
- * Sets up event listeners for 'Learn More' and 'Favorite' buttons on attraction cards.
- */
 function setupCardButtonListeners() {
     document.querySelectorAll('.learn-more-button').forEach(button => {
         button.addEventListener('click', (event) => {
@@ -96,13 +88,8 @@ function setupCardButtonListeners() {
     });
 }
 
-/**
- * Opens the modal dialog with details of the selected attraction.
- * @param {string} attractionId - The ID of the attraction to display.
- */
-async function openModalWithAttraction(attractionId) {
-    const attractions = await fetchAttractions(); // Re-fetch or pass data
-    currentAttraction = attractions.find(attr => attr.id === attractionId);
+function openModalWithAttraction(attractionId) {
+    currentAttraction = attractionsData.find(attr => attr.id === attractionId);
 
     if (currentAttraction && attractionModal) {
         document.getElementById('modal-title').textContent = currentAttraction.name;
@@ -114,36 +101,25 @@ async function openModalWithAttraction(attractionId) {
         document.getElementById('modal-description').textContent = currentAttraction.description;
         document.getElementById('modal-details').textContent = currentAttraction.details;
 
-        // Update favorite button state in modal
-        const favoritedAttractions = getFavoritedAttractions();
-        if (favoritedAttractions.includes(currentAttraction.id)) {
-            favoriteButton.classList.add('favorited');
-            favoriteButton.textContent = 'Favorited';
-        } else {
-            favoriteButton.classList.remove('favorited');
-            favoriteButton.textContent = 'Add to Favorites';
-        }
+        const isFavorited = getFavoritedAttractions().includes(currentAttraction.id);
+        favoriteButton.classList.toggle('favorited', isFavorited);
+        favoriteButton.textContent = isFavorited ? 'Favorited' : 'Add to Favorites';
 
-        attractionModal.classList.add('active'); // Show modal
-        attractionModal.focus(); // Set focus for accessibility
+        attractionModal.classList.add('active');
+        attractionModal.focus();
     }
 }
 
-/**
- * Sets up event listeners for the modal dialog.
- */
 function setupModalEvents() {
     if (closeModalButton) {
         closeModalButton.addEventListener('click', closeModal);
     }
     if (attractionModal) {
         attractionModal.addEventListener('click', (event) => {
-            // Close modal if clicked outside modal-content
             if (event.target === attractionModal) {
                 closeModal();
             }
         });
-        // Close modal with Escape key
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && attractionModal.classList.contains('active')) {
                 closeModal();
@@ -155,72 +131,47 @@ function setupModalEvents() {
         favoriteButton.addEventListener('click', () => {
             if (currentAttraction) {
                 toggleFavorite(currentAttraction.id, favoriteButton);
-                // Also update the button on the card if it exists
                 const cardButton = document.querySelector(`.attraction-card button.favorite-button[data-id="${currentAttraction.id}"]`);
                 if (cardButton) {
-                    if (favoriteButton.classList.contains('favorited')) {
-                        cardButton.classList.add('favorited');
-                        cardButton.textContent = 'Favorited';
-                    } else {
-                        cardButton.classList.remove('favorited');
-                        cardButton.textContent = 'Add to Favorites';
-                    }
+                    const isFavorited = favoriteButton.classList.contains('favorited');
+                    cardButton.classList.toggle('favorited', isFavorited);
+                    cardButton.textContent = isFavorited ? 'Favorited' : 'Add to Favorites';
                 }
             }
         });
     }
 }
 
-/**
- * Closes the modal dialog.
- */
 function closeModal() {
     if (attractionModal) {
         attractionModal.classList.remove('active');
     }
 }
 
-/**
- * Retrieves favorited attraction IDs from local storage.
- * @returns {Array<string>} An array of favorited attraction IDs.
- */
 function getFavoritedAttractions() {
     const favorites = localStorage.getItem('favoritedAttractions');
     return favorites ? JSON.parse(favorites) : [];
 }
 
-/**
- * Saves favorited attraction IDs to local storage.
- * @param {Array<string>} favorites - An array of favorited attraction IDs.
- */
 function saveFavoritedAttractions(favorites) {
     localStorage.setItem('favoritedAttractions', JSON.stringify(favorites));
 }
 
-/**
- * Toggles an attraction's favorite status in local storage and updates the button text.
- * @param {string} id - The ID of the attraction.
- * @param {HTMLElement} button - The button element to update.
- */
 function toggleFavorite(id, button) {
     let favorites = getFavoritedAttractions();
-    if (favorites.includes(id)) {
-        // Remove from favorites using filter array method
+    const isFavorited = favorites.includes(id);
+
+    if (isFavorited) {
         favorites = favorites.filter(favId => favId !== id);
-        button.classList.remove('favorited');
-        button.textContent = 'Add to Favorites';
     } else {
-        // Add to favorites
         favorites.push(id);
-        button.classList.add('favorited');
-        button.textContent = 'Favorited';
     }
+    
     saveFavoritedAttractions(favorites);
+    button.classList.toggle('favorited', !isFavorited);
+    button.textContent = isFavorited ? 'Add to Favorites' : 'Favorited';
 }
 
-/**
- * Initializes lazy loading for images with the 'lazy-load-img' class.
- */
 function setupLazyLoading() {
     const lazyImages = document.querySelectorAll('img.lazy-load-img');
 
@@ -230,8 +181,8 @@ function setupLazyLoading() {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
-                    img.classList.add('loaded'); // Add a class for fade-in effect
-                    observer.unobserve(img); // Stop observing once loaded
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
                 }
             });
         });
@@ -240,20 +191,9 @@ function setupLazyLoading() {
             lazyLoadObserver.observe(img);
         });
     } else {
-        // Fallback for browsers that don't support Intersection Observer
         lazyImages.forEach(img => {
             img.src = img.dataset.src;
             img.classList.add('loaded');
         });
-    }
-}
-
-/**
- * Main function to fetch and display attractions.
- */
-async function fetchAndDisplayAttractions() {
-    const attractions = await fetchAttractions();
-    if (attractions.length > 0) {
-        displayAttractions(attractions);
     }
 }
