@@ -38,7 +38,6 @@ main {
     flex: 1;
 }
 
-/* Ensure all h1 tags have a specified font-size */
 h1 {
     font-size: 2.2rem;
     font-family: var(--heading-font);
@@ -156,7 +155,6 @@ header nav a:hover {
 }
 
 .hero-text h1 {
-    /* Specific rule for hero h1 to ensure Lighthouse doesn't miss it */
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
