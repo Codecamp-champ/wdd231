@@ -147,7 +147,8 @@ header nav a:hover {
 
 .hero-text h1 {
     font-family: var(--heading-font);
-    font-size: 2.5rem; /* Explicitly setting font size to address the deprecated API warning */
+    /* Explicitly setting font size to address the deprecated API warning */
+    font-size: 2.5rem; 
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
@@ -307,7 +308,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* FIX: Added social links styling */
 footer .social-links {
     display: flex;
     gap: 10px;
@@ -519,7 +519,7 @@ form textarea {
     }
 
     .hero-text h1 {
-        font-size: 3.5rem; /* Explicitly setting font size for larger screens */
+        font-size: 3.5rem;
     }
 
     .hero-text p {
