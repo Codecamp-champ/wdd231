@@ -2,6 +2,7 @@ const WEATHER_API_KEY = '2d7a0b25d9910e4763e5868f0c50f3d2';
 const LATITUDE = 49.5044;
 const LONGITUDE = -115.7725;
 
+// Add 'export' to make the function available to other modules
 export async function getWeatherData() {
     const weatherDisplay = document.getElementById("weather-display");
     if (!weatherDisplay) return;
