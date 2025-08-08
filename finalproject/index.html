@@ -16,9 +16,11 @@
     <meta property="og:description" content="Discover the breathtaking beauty and unique landscapes of Iceland.">
     <meta property="og:locale" content="en_US">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v29/KFOiCnqEu92Fr1Mu51bLCx-iCmB73c9z.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v27/memvYaGs126MiZpBA-UvWbX2vVnXBb0.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"></noscript>
     
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.js" type="module"></script>
@@ -44,7 +46,7 @@
             <picture>
                 <source srcset="images/simonmigaj-large.webp" media="(min-width: 1024px)">
                 <source srcset="images/simonmigaj-medium.webp" media="(min-width: 768px)">
-                <img src="images/simonmigaj-small.webp" alt="Icelandic Landscape with Northern Lights" loading="lazy">
+                <img src="images/simonmigaj-small.webp" alt="Icelandic Landscape with Northern Lights" width="1024" height="683">
             </picture>
             <div class="hero-text">
                 <h1>Land of Fire and Ice</h1>
@@ -61,20 +63,20 @@
         <section id="weather" class="content-section weather-section">
             <h2>Current Weather</h2>
             <div id="weather-display">
-                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
             <a href="https://github.com/codecamp-champ" target="_blank" aria-label="Aaron Coker's GitHub Profile">
-                <img src="images/github-icon.svg" alt="GitHub Icon">
+                <img src="images/github-icon.svg" alt="GitHub Icon" width="30" height="30">
             </a>
             <a href="https://www.linkedin.com/in/aaron-d-c/" target="_blank" aria-label="Aaron Coker's LinkedIn Profile">
-                <img src="images/linkedin-icon.svg" alt="LinkedIn Icon">
+                <img src="images/linkedin-icon.svg" alt="LinkedIn Icon" width="30" height="30">
             </a>
             <a href="https://www.facebook.com/aaron.coker.56" target="_blank" aria-label="Aaron Coker's Facebook Profile">
-                <img src="images/facebook-icon.svg" alt="Facebook Icon">
+                <img src="images/facebook-icon.svg" alt="Facebook Icon" width="30" height="30">
             </a>
         </div>
         <p>&copy; <span id="currentyear"></span> Aaron Coker | British Columbia, Canada</p>

@@ -145,9 +145,9 @@ header nav a:hover {
     border-radius: 8px;
 }
 
-.hero-text h2 {
+.hero-text h1 {
     font-family: var(--heading-font);
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Explicitly setting font size to address the deprecated API warning */
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
@@ -518,8 +518,8 @@ form textarea {
         padding: 0;
     }
 
-    .hero-text h2 {
-        font-size: 3.5rem;
+    .hero-text h1 {
+        font-size: 3.5rem; /* Explicitly setting font size for larger screens */
     }
 
     .hero-text p {

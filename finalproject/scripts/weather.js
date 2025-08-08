@@ -56,7 +56,7 @@ function displayWeatherData(currentData, forecastData) {
             <div class="forecast-card">
                 <h4>${dayOfWeek}</h4>
                 <p>${forecastTemp}°F</p>
-                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
+                <p>${capitalizeFirstLetter(forecastDescription)} <img src="${forecastIconUrl}" alt="Weather icon" class="weather-icon" width="50" height="50"></p>
             </div>
         `;
     }).join('');
@@ -64,7 +64,7 @@ function displayWeatherData(currentData, forecastData) {
     weatherDisplay.innerHTML = `
         <div class="current-weather">
             <p>Current Temperature: <strong>${currentTemp}°F</strong></p>
-            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="" class="weather-icon" width="50" height="50"></p>
+            <p>Condition: ${capitalizeFirstLetter(weatherDescription)} <img src="${weatherIconUrl}" alt="Weather icon" class="weather-icon" width="50" height="50"></p>
         </div>
         <h3>3-Day Forecast:</h3>
         <div class="forecast-cards">
