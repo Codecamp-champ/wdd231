@@ -1,172 +1,139 @@
-[
-    {
-        "id": "blue-lagoon",
+{
+    "attractions": [
+      {
+        "id": 1,
         "name": "The Blue Lagoon",
-        "location": "Grindavík",
-        "description": "A world-renowned geothermal spa, famous for its mineral-rich, milky-blue waters set amidst a dramatic lava field.",
-        "details": "The Blue Lagoon is one of Iceland's most popular attractions, offering a unique bathing experience. The water's unique composition of silica, algae, and minerals is known for its healing properties. Pre-booking is essential.",
-        "image": "blue-lagoon.webp",
-        "type": "Spa",
-        "rating": 4.8
-    },
-    {
-        "id": "golden-circle",
+        "shortDescription": "A famous geothermal spa with milky-blue waters.",
+        "description": "The Blue Lagoon is a world-renowned geothermal spa located in a lava field near Grindavík. The warm, mineral-rich waters are believed to have healing properties.",
+        "imageUrl": "images/blue-lagoon.webp",
+        "region": "Reykjanes Peninsula",
+        "type": "Geothermal Spa"
+      },
+      {
+        "id": 2,
         "name": "Golden Circle",
-        "location": "Southern Iceland",
-        "description": "A popular tourist route covering three main natural attractions: Þingvellir National Park, the Geysir geothermal area, and the Gullfoss waterfall.",
-        "details": "The Golden Circle is a classic day trip from Reykjavík, showcasing Iceland's geological wonders and historical significance. Þingvellir is a UNESCO World Heritage site, Geysir is home to the active Strokkur geyser, and Gullfoss is a majestic waterfall.",
-        "image": "golden-circle.webp",
-        "type": "Route",
-        "rating": 4.7
-    },
-    {
-        "id": "jokulsarlon",
+        "shortDescription": "A popular tourist route with stunning natural sights.",
+        "description": "The Golden Circle is a famous tourist route covering about 300 kilometers, including Þingvellir National Park, the Gullfoss waterfall, and the Geysir geothermal area.",
+        "imageUrl": "images/golden-circle.webp",
+        "region": "Southern Iceland",
+        "type": "Tourist Route"
+      },
+      {
+        "id": 3,
         "name": "Jökulsárlón Glacier Lagoon",
-        "location": "Southeast Iceland",
-        "description": "A large glacial lake filled with icebergs breaking off from the Breiðamerkurjökull glacier, a part of Vatnajökull National Park.",
-        "details": "This stunning lagoon offers boat tours among the floating icebergs, which vary in size and color. It's a truly mesmerizing natural spectacle, often visited alongside the nearby Diamond Beach.",
-        "image": "jokulsarlon.webp",
-        "type": "Glacier Lagoon",
-        "rating": 4.9
-    },
-    {
-        "id": "diamond-beach",
+        "shortDescription": "A large glacial lake with floating icebergs.",
+        "description": "Jökulsárlón is a large glacial lake on the edge of Vatnajökull National Park. It is famous for the icebergs that break off from the Breiðamerkurjökull glacier.",
+        "imageUrl": "images/jokulsarlon.webp",
+        "region": "Southeastern Iceland",
+        "type": "Natural Wonder"
+      },
+      {
+        "id": 4,
         "name": "Diamond Beach",
-        "location": "Southeast Iceland",
-        "description": "A black sand beach adjacent to Jökulsárlón Glacier Lagoon, where icebergs wash ashore and glitter like diamonds against the dark sand.",
-        "details": "A photographer's paradise, Diamond Beach provides a stark and beautiful contrast between the volcanic black sand and the crystal-clear ice chunks. It's easily accessible from Jökulsárlón.",
-        "image": "diamond-beach.webp",
-        "type": "Beach",
-        "rating": 4.8
-    },
-    {
-        "id": "reynisfjara",
-        "name": "Reynisfjara Black Sand Beach",
-        "location": "South Coast",
-        "description": "Famous for its black sand, basalt columns, and the Reynisdrangar sea stacks rising from the ocean.",
-        "details": "Located near the village of Vík í Mýrdal, this beach is incredibly scenic but also dangerous due to strong sneaker waves. Visitors should always be cautious and respect warning signs.",
-        "image": "reynisfjara.webp",
-        "type": "Beach",
-        "rating": 4.6
-    },
-    {
-        "id": "skogafoss",
+        "shortDescription": "Black sand beach with washed-up icebergs.",
+        "description": "Diamond Beach is a black sand beach located next to the Jökulsárlón Glacier Lagoon. It gets its name from the large chunks of ice that wash ashore and glisten like diamonds.",
+        "imageUrl": "images/diamond-beach.webp",
+        "region": "Southeastern Iceland",
+        "type": "Natural Wonder"
+      },
+      {
+        "id": 5,
         "name": "Skógafoss Waterfall",
-        "location": "South Coast",
-        "description": "One of Iceland's largest and most beautiful waterfalls, with a 60-meter drop and often producing a single or double rainbow.",
-        "details": "You can walk right up to the waterfall's base, feeling its immense power. There's also a staircase leading to an observation platform above for panoramic views of the coast.",
-        "image": "skogafoss.webp",
-        "type": "Waterfall",
-        "rating": 4.7
-    },
-    {
-        "id": "seljalandsfoss",
-        "name": "Seljalandsfoss Waterfall",
-        "location": "South Coast",
-        "description": "A unique waterfall where visitors can walk behind the cascading water, offering a memorable perspective.",
-        "details": "This waterfall is particularly popular for its walkable path behind the curtain of water, especially beautiful during sunset. Bring waterproof clothing!",
-        "image": "seljalw.webp",
-        "type": "Waterfall",
-        "rating": 4.6
-    },
-    {
-        "id": "dyrholaey",
-        "name": "Dyrhólaey Arch",
-        "location": "South Coast",
-        "description": "A massive rock arch protruding into the sea, offering stunning coastal views and a popular spot for puffin watching.",
-        "details": "Dyrhólaey is a promontory with a lighthouse and panoramic views of the black sand beaches, glaciers, and the impressive rock arch. It's a protected nature reserve.",
-        "image": "dyrarch.webp",
-        "type": "Landmark",
-        "rating": 4.5
-    },
-    {
-        "id": "hallgrimskirkja",
+        "shortDescription": "One of Iceland's largest and most beautiful waterfalls.",
+        "description": "Skógafoss is a spectacular waterfall on the Skógá River. The waterfall produces a large amount of spray, often creating single or double rainbows on sunny days.",
+        "imageUrl": "images/skogafoss.webp",
+        "region": "Southern Iceland",
+        "type": "Waterfall"
+      },
+      {
+        "id": 6,
+        "name": "Reynisfjara Beach",
+        "shortDescription": "A black sand beach with basalt columns and sea stacks.",
+        "description": "Reynisfjara is a black pebble beach near the village of Vík. The beach is famous for its dramatic black sand, basalt columns, and the powerful Atlantic waves.",
+        "imageUrl": "images/reynisfjara.webp",
+        "region": "Southern Iceland",
+        "type": "Natural Wonder"
+      },
+      {
+        "id": 7,
         "name": "Hallgrímskirkja Church",
-        "location": "Reykjavík",
-        "description": "Reykjavík's iconic landmark church, known for its unique architecture inspired by basalt columns and a tower offering city views.",
-        "details": "This impressive Lutheran parish church dominates the Reykjavík skyline. Visitors can take an elevator to the top of the tower for incredible 360-degree views of the city and surrounding mountains.",
-        "image": "hallgrim.webp",
-        "type": "Architecture",
-        "rating": 4.5
-    },
-    {
-        "id": "thingvellir",
+        "shortDescription": "An iconic Lutheran parish church in Reykjavík.",
+        "description": "Hallgrímskirkja is the tallest church in Iceland and one of the country's most recognizable landmarks. Its unique design is inspired by the basalt columns found in Icelandic landscapes.",
+        "imageUrl": "images/hallgrim.webp",
+        "region": "Reykjavík",
+        "type": "Landmark"
+      },
+      {
+        "id": 8,
+        "name": "Myvatn Nature Baths",
+        "shortDescription": "A natural lagoon with mineral-rich, geothermal water.",
+        "description": "Often called the 'Blue Lagoon of the North,' the Myvatn Nature Baths offer a relaxing geothermal experience with stunning views of the surrounding volcanic landscape.",
+        "imageUrl": "images/askja.webp",
+        "region": "Northern Iceland",
+        "type": "Geothermal Spa"
+      },
+      {
+        "id": 9,
+        "name": "Gullfoss Waterfall",
+        "shortDescription": "A magnificent two-tiered waterfall on the Hvítá River.",
+        "description": "Gullfoss, or 'Golden Falls,' is one of Iceland's most famous waterfalls. It cascades down two distinct drops into a rugged canyon, creating a dramatic spectacle.",
+        "imageUrl": "images/varnajok.webp",
+        "region": "Southern Iceland",
+        "type": "Waterfall"
+      },
+      {
+        "id": 10,
         "name": "Þingvellir National Park",
-        "location": "Golden Circle",
-        "description": "A UNESCO World Heritage site where the North American and Eurasian tectonic plates meet and drift apart, creating a dramatic rift valley.",
-        "details": "Historically significant as the site of Iceland's ancient parliament, Alþingi. It's also popular for snorkeling and diving in the crystal-clear Silfra fissure.",
-        "image": "ping.webp",
-        "type": "National Park",
-        "rating": 4.7
-    },
-    {
-        "id": "landmannalaugar",
+        "shortDescription": "A UNESCO World Heritage site and a geological wonder.",
+        "description": "Þingvellir holds historical significance as the site of Iceland's first parliament. It is also a geological marvel where the North American and Eurasian tectonic plates meet.",
+        "imageUrl": "images/ping.webp",
+        "region": "Southern Iceland",
+        "type": "National Park"
+      },
+      {
+        "id": 11,
+        "name": "Geysir Geothermal Area",
+        "shortDescription": "Home to the famous Strokkur geyser.",
+        "description": "Part of the Golden Circle, the Geysir area is a hotbed of geothermal activity. Strokkur geyser erupts every few minutes, shooting a column of water up to 20 meters high.",
+        "imageUrl": "images/fjaorar.webp",
+        "region": "Southern Iceland",
+        "type": "Geothermal Area"
+      },
+      {
+        "id": 12,
+        "name": "Snæfellsjökull National Park",
+        "shortDescription": "A national park centered around a stratovolcano glacier.",
+        "description": "Snæfellsjökull is a magnificent glacier-capped volcano. The national park offers rugged landscapes, black sand beaches, and dramatic cliffs.",
+        "imageUrl": "images/snaefell.webp",
+        "region": "Western Iceland",
+        "type": "National Park"
+      },
+      {
+        "id": 13,
         "name": "Landmannalaugar",
-        "location": "Highlands",
-        "description": "A stunning geothermal wonderland in the Highlands, famous for its vibrant rhyolite mountains and natural hot springs.",
-        "details": "Accessible primarily in summer via F-roads, Landmannalaugar is a hiker's paradise with trails ranging from easy walks to multi-day treks. The colorful mountains are a result of volcanic activity.",
-        "image": "landman.webp",
-        "type": "Nature Reserve",
-        "rating": 4.9
-    },
-    {
-        "id": "askja",
-        "name": "Askja Caldera",
-        "location": "Highlands",
-        "description": "A remote and active volcano caldera with a large, deep lake (Öskjuvatn) and a smaller, warm crater lake (Víti) suitable for bathing.",
-        "details": "Reaching Askja requires a challenging drive through the Highlands, but the otherworldly landscape and the chance to bathe in Víti make it a unique adventure. The area is often compared to the moon's surface.",
-        "image": "askja.webp",
-        "type": "Volcano",
-        "rating": 4.7
-    },
-    {
-        "id": "vatnajokull",
-        "name": "Vatnajökull National Park",
-        "location": "Southeast Iceland",
-        "description": "Europe's largest glacier and surrounding area, offering diverse landscapes including ice caves, volcanoes, and geothermal activity.",
-        "details": "This vast national park encompasses a huge variety of natural wonders. Activities include glacier hiking, ice caving (seasonal), and exploring the various outlets of the glacier.",
-        "image": "varnajok.webp",
-        "type": "National Park",
-        "rating": 4.9
-    },
-    {
-        "id": "snæfellsnes",
-        "name": "Snæfellsnes Peninsula",
-        "location": "West Iceland",
-        "description": "Often called 'Iceland in Miniature' due to its diverse landscapes, including a glacier, black sand beaches, and charming fishing villages.",
-        "details": "This peninsula is home to Snæfellsjökull glacier, a stratovolcano, and numerous picturesque spots like Arnarstapi, Hellnar, and the iconic Kirkjufell mountain.",
-        "image": "snaefell.webp",
-        "type": "Peninsula",
-        "rating": 4.8
-    },
-    {
-        "id": "kirkjufell",
-        "name": "Kirkjufell Mountain",
-        "location": "Snæfellsnes Peninsula",
-        "description": "A distinctive, arrow-shaped mountain often considered one of Iceland's most photographed landmarks, especially with its nearby waterfall, Kirkjufellsfoss.",
-        "details": "This mountain gained international fame from Game of Thrones. Its unique shape and the scenic waterfall in the foreground make it a popular spot for photographers.",
-        "image": "kirk.webp",
-        "type": "Mountain",
-        "rating": 4.7
-    },
-    {
-        "id": "stokksnes",
-        "name": "Stokksnes Peninsula & Vestrahorn",
-        "location": "Southeast Iceland",
-        "description": "A dramatic landscape featuring the iconic Vestrahorn mountain, black sand dunes, and a Viking village film set.",
-        "details": "This area offers stunning views, especially at sunrise or sunset, with the jagged peaks of Vestrahorn reflecting in the calm waters. It's a less crowded alternative to some of the more famous spots.",
-        "image": "stokksnes.webp",
-        "type": "Peninsula",
-        "rating": 4.6
-    },
-    {
-        "id": "fjaðrárgljúfur",
-        "name": "Fjaðrárgljúfur Canyon",
-        "location": "South Iceland",
-        "description": "A magnificent and winding canyon with steep walls, carved by glacial meltwater over thousands of years.",
-        "details": "This impressive canyon offers walking paths along its edges, providing breathtaking views of the river below and the unique rock formations. It gained popularity after being featured in a Justin Bieber music video.",
-        "image": "fjaorar.webp",
-        "type": "Canyon",
-        "rating": 4.5
-    }
-]
+        "shortDescription": "A remote and beautiful region known for its rhyolite mountains.",
+        "description": "Located in the Highlands, Landmannalaugar is famous for its colorful mountains, hot springs, and hiking trails. It is a popular destination for adventurers.",
+        "imageUrl": "images/landman.webp",
+        "region": "Highlands",
+        "type": "Hiking Area"
+      },
+      {
+        "id": 14,
+        "name": "Vestrahorn Mountain",
+        "shortDescription": "A stunning mountain on the Stokksnes peninsula.",
+        "description": "Vestrahorn is a majestic mountain range on the Stokksnes peninsula, famous for its dramatic, jagged peaks and the reflection it creates on the black sand beach below.",
+        "imageUrl": "images/stokksnes.webp",
+        "region": "Eastern Iceland",
+        "type": "Mountain"
+      },
+      {
+        "id": 15,
+        "name": "Seljalandsfoss Waterfall",
+        "shortDescription": "A unique waterfall you can walk behind.",
+        "description": "Seljalandsfoss is a picturesque waterfall on the South Coast. A path allows visitors to walk behind the cascading water, offering a unique perspective and photo opportunity.",
+        "imageUrl": "images/seljalw.webp",
+        "region": "Southern Iceland",
+        "type": "Waterfall"
+      }
+    ]
+  }

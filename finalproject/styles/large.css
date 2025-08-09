@@ -1,0 +1,58 @@
+@media (min-width: 768px) {
+    /* Header and Navigation */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    #menu-button {
+        display: none; /* Hide hamburger menu on large screens */
+    }
+
+    #main-nav {
+        display: block; /* Show horizontal menu */
+        position: static;
+        width: auto;
+    }
+
+    #main-nav ul {
+        display: flex;
+    }
+    
+    #main-nav li a {
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hero Section */
+    .hero-text-container {
+        max-width: 60%;
+    }
+
+    .hero-text-container h2 {
+        font-size: 3rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1.2rem;
+    }
+
+    /* Home Page Grid Layout */
+    .home-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    /* Attractions Grid */
+    .attractions-grid {
+        padding: 2rem;
+    }
+
+    /* Form Layout */
+    form {
+        max-width: 700px;
+        margin: 2rem auto;
+    }
+}

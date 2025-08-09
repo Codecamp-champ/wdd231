@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Iceland: Land of Fire and Ice</title>
-    <meta name="description" content="Explore the captivating land of fire and ice: Iceland. Discover its stunning landscapes, popular attractions, and current weather conditions.">
+    <meta name="description" content="Explore the captivating land of fire and ice: Iceland. Discover its stunning landscapes and popular attractions.">
     <meta name="author" content="Aaron Coker">
+    <title>Iceland: Land of Fire and Ice</title>
 
-    <link rel="icon" href="images/cool-icon.svg" type="image/svg+xml">
-
-    <meta property="og:title" content="Discover Iceland: Land of Fire and Ice">
+    <meta property="og:title" content="Iceland: Land of Fire and Ice">
+    <meta property="og:description" content="Explore the breathtaking landscapes of Iceland, from glaciers and volcanoes to geothermal spas.">
+    <meta property="og:image" content="https://yourusername.github.io/wdd231/finalproject/images/social-share-image.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/finalproject/index.html">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-github-username.github.io/wdd231/finalproject/index.html">
-    <meta property="og:image" content="https://your-github-username.github.io/wdd231/finalproject/images/simonmigaj-og.webp">
-    <meta property="og:description" content="Discover the breathtaking beauty and unique landscapes of Iceland.">
-    <meta property="og:locale" content="en_US">
 
+    <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"></noscript>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" type="module"></script>
-    <script src="scripts/nav.js" type="module"></script>
-    <script src="scripts/weather.js" type="module"></script>
-    <script src="scripts/footer.js" type="module"></script>
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <script type="module" src="scripts/main.js"></script>
 </head>
-<body>
+<body class="index-page">
     <header>
-        <button class="hamburger" aria-label="Toggle navigation menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+        <a href="index.html" class="logo">
+            <img src="images/favicon.ico" alt="Iceland Logo">
+            <h1>Iceland Explorer</h1>
+        </a>
+        <button id="menu-button" aria-label="Toggle navigation menu">&#9776;</button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="attractions.html">Attractions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -44,48 +39,43 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-section">
             <picture>
-                <source data-srcset="images/simonmigaj-large.webp" media="(min-width: 1024px)">
-                <source data-srcset="images/simonmigaj-medium.webp" media="(min-width: 768px)">
-                <img data-src="images/simonmigaj-small.webp" alt="Icelandic Landscape with Northern Lights" width="1024" height="683">
+                <source media="(min-width: 1024px)" srcset="images/simonmigaj-large.webp">
+                <source media="(min-width: 768px)" srcset="images/simonmigaj-medium.webp">
+                <img src="images/simonmigaj-small.webp" alt="Majestic Icelandic landscape with the northern lights." loading="lazy">
             </picture>
-            <div class="hero-text">
-                <h1>Land of Fire and Ice</h1>
-                <p>Discover the breathtaking beauty and unique landscapes of Iceland.</p>
+            <div class="hero-text-container">
+                <h2>The Land of Fire and Ice</h2>
+                <p>Journey to a world of breathtaking glaciers, active volcanoes, and stunning geothermal wonders.</p>
             </div>
         </section>
 
-        <section id="about" class="content-section">
-            <h2>About Iceland</h2>
-            <p>Iceland, a Nordic island nation, is defined by its dramatic landscape with volcanoes, geysers, hot springs and lava fields. Massive glaciers are protected in Vatnajökull and Snæfellsjökull National Parks. Most of the population lives in the capital, Reykjavík, which runs on geothermal power and is home to the National and Saga museums, chronicling Iceland’s Viking history.</p>
-            <p>Despite its name, Iceland experiences a relatively mild climate due to the Gulf Stream. However, its weather can be notoriously unpredictable, with rapid changes from sun to rain, and strong winds are common. This ever-changing weather adds to the adventurous spirit of exploring the island.</p>
-        </section>
-
-        <section id="weather" class="content-section weather-section">
-            <h2>Current Weather</h2>
-            <div id="weather-display">
+        <section class="home-grid">
+            <article class="weather-card">
+                <h3>Current Weather in Iceland</h3>
+                <div class="weather-content">
+                    <p>Temperature: <span id="temperature-value">--</span></p>
+                    <p>Conditions: <span id="conditions-value">--</span></p>
+                    <p>Wind Speed: <span id="windspeed-value">--</span></p>
+                    <p>Wind Chill: <span id="windchill-value">--</span></p>
                 </div>
+            </article>
+
+            <article class="attractions-summary-card">
+                <h3>Discover Popular Attractions</h3>
+                <p>From the Golden Circle to the Blue Lagoon, Iceland is home to unique and unforgettable sights. Click below to see more.</p>
+                <a href="attractions.html" class="call-to-action">Explore Now</a>
+            </article>
         </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/codecamp-champ" target="_blank" aria-label="Aaron Coker's GitHub Profile">
-                <img src="images/github-icon.svg" alt="GitHub Icon" width="30" height="30">
-            </a>
-            <a href="https://www.linkedin.com/in/aaron-d-c/" target="_blank" aria-label="Aaron Coker's LinkedIn Profile">
-                <img src="images/linkedin-icon.svg" alt="LinkedIn Icon" width="30" height="30">
-            </a>
-            <a href="https://www.facebook.com/aaron.coker.56" target="_blank" aria-label="Aaron Coker's Facebook Profile">
-                <img src="images/facebook-icon.svg" alt="Facebook Icon" width="30" height="30">
-            </a>
-        </div>
-        <p>&copy; <span id="currentyear"></span> Aaron Coker | British Columbia, Canada</p>
-        <p>Last Updated: <span id="lastModified"></span></p>
-        <div class="footer-links">
-            <a href="attributions.html">Attributions</a> |
-            <a href="https://youtu.be/your-video-link" target="_blank">Video Demonstration</a>
+        <div class="footer-content">
+            <p>&copy; <span id="currentyear"></span> Iceland Explorer | Aaron Coker</p>
+            <p>Last Updated: <span id="lastmodified"></span></p>
+            <a href="attributions.html">Attributions</a>
+            <a href="https://www.youtube.com/watch?v=your-video-link" target="_blank">Video Demonstration</a>
         </div>
     </footer>
 </body>
