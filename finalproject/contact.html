@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact us to learn more about our Iceland travel guides and resources.">
+    <meta name="description" content="Contact the Iceland Explorer team for more information or to provide feedback.">
     <meta name="author" content="Aaron Coker">
-    <title>Contact Us - Iceland Explorer</title>
-
-    <meta property="og:title" content="Contact Us - Iceland Explorer">
-    <meta property="og:description" content="Have questions about Iceland? Get in touch with us.">
-    <meta property="og:image" content="https://yourusername.github.io/wdd231/finalproject/images/social-share-image.jpg">
-    <meta property="og:url" content="https://yourusername.github.io/wdd231/finalproject/contact.html">
-    <meta property="og:type" content="website">
+    <title>Contact Us</title>
 
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +19,7 @@
 <body>
     <header>
         <a href="index.html" class="logo">
-            <img src="images/favicon.ico" alt="Iceland Logo">
+            <img src="images/dyrarch.webp" alt="Iceland Logo">
             <h1>Iceland Explorer</h1>
         </a>
         <button id="menu-button" aria-label="Toggle navigation menu">&#9776;</button>
@@ -40,33 +34,32 @@
 
     <main>
         <h2 class="page-title">Contact Us</h2>
-        <form id="contact-form" action="thank-you.html" method="GET">
+        <form id="contact-form" action="thank-you.html" method="get">
             <fieldset>
-                <legend>Your Information</legend>
+                <legend>Your Details</legend>
                 <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="fullname" required>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address:</label>
+                    <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
             </fieldset>
 
             <fieldset>
-                <legend>Inquiry Details</legend>
+                <legend>Your Message</legend>
                 <div class="form-group">
-                    <label for="topic">Topic of Inquiry:</label>
+                    <label for="topic">Topic:</label>
                     <select id="topic" name="topic" required>
-                        <option value="" disabled selected>Select a topic...</option>
-                        <option value="general">General Question</option>
-                        <option value="attractions">Attractions</option>
-                        <option value="weather">Weather Information</option>
-                        <option value="other">Other</option>
+                        <option value="">Select a topic...</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="suggestions">Suggestions</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Your Message:</label>
+                    <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
             </fieldset>
