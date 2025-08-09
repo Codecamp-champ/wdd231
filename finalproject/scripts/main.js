@@ -102,7 +102,7 @@ function createAttractionCard(attractionData) {
     card.innerHTML = `
         <img src="${attractionData.imageUrl}" alt="${attractionData.name}" loading="lazy">
         <div class="attraction-card-content">
-            <h4>${attractionData.name}</h4>
+            <h3>${attractionData.name}</h3>
             <p>${attractionData.shortDescription}</p>
         </div>
     `;
